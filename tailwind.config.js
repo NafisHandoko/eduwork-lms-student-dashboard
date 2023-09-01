@@ -21,6 +21,9 @@ export default {
         "text": {
           "heading": "#303030",
           "paragraph": "#676767"
+        },
+        "flowkit": {
+          "red": "#FF0101"
         }
       }
     },
