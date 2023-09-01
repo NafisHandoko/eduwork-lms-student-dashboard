@@ -28,10 +28,10 @@ export default function MyClassActionPanel() {
                 <input type="checkbox" name="last-update" id="last-update" />
                 <span>Last Update</span>
             </div>
-            <div className='flex flex-row items-center gap-2 bg-white border border-primary-main px-4 text-primary-main rounded-full whitespace-nowrap'>
+            <button className='flex flex-row items-center gap-2 bg-white border border-primary-main px-4 text-primary-main rounded-full whitespace-nowrap'>
                 <span>Filter</span>
                 <i className="bi bi-filter"></i>
-            </div>
+            </button>
         </div>
     )
 }

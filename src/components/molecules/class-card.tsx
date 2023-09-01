@@ -13,8 +13,8 @@ export default function ClassCard() {
         <div className='flex flex-row items-center justify-between gap-3'>
           <span className='text-sm font-medium'>Aria Dwitolio</span>
           <div className='flex flex-row gap-2'>
-            <div className='bg-primary-main w-7 h-7 flex items-center justify-center rounded-lg text-white text-sm'><HiOutlinePencil /></div>
-            <div className='bg-flowkit-red w-7 h-7 flex items-center justify-center rounded-lg text-white text-sm'><HiOutlineTrash /></div>
+            <button className='bg-primary-main w-7 h-7 flex items-center justify-center rounded-lg text-white text-sm'><HiOutlinePencil /></button>
+            <button className='bg-flowkit-red w-7 h-7 flex items-center justify-center rounded-lg text-white text-sm'><HiOutlineTrash /></button>
           </div>
         </div>
         <div className='flex flex-row items-center gap-1'>
