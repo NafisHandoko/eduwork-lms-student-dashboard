@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import StudentTemplate from '../components/templates/student-template'
 import ListClassActionPanel from '../components/molecules/list-class/action-panel'
+import CardDummyImg from '../assets/dummy/list-class-card.png'
+import { HiBolt, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi2";
 
 export default function ListClass() {
     const [isExpand, setIsExpand] = useState(true)
@@ -14,9 +16,31 @@ export default function ListClass() {
             </div>
 
             {/* main content */}
-            <div className='flex flex-col gap-3 p-3'>
+            <div className='flex flex-col gap-5 p-5'>
                 <ListClassActionPanel />
-                <div>tes</div>
+                <div className='grid grid-cols-3 gap-3'>
+                    <div className='flex flex-col rounded-lg bg-white max-w-1/3 rounded-lg'>
+                        {/* <img src={CardDummyImg} alt="" className='object-cover rounded-lg' /> */}
+                        <div className={`h-48 bg-cover bg-center rounded-lg`} style={{ backgroundImage: `url(${CardDummyImg})` }}></div>
+                        <div className='flex flex-col gap-2 p-6'>
+                            <h2 className='font-medium'>Intro to UI/UX Designer</h2>
+                            <div className='flex flex-row items-center justify-between gap-3'>
+                                <span className='text-sm font-medium'>Aria Dwitolio</span>
+                                <div className='flex flex-row gap-2'>
+                                    <div className='bg-primary-main w-7 h-7 flex items-center justify-center rounded-lg text-white text-sm'><HiOutlinePencil /></div>
+                                    <div className='bg-flowkit-red w-7 h-7 flex items-center justify-center rounded-lg text-white text-sm'><HiOutlineTrash /></div>
+                                </div>
+                            </div>
+                            <div className='flex flex-row items-center gap-1'>
+                                <span className='text-primary-main'><HiBolt /></span>
+                                <div className='flex flex-col'>
+                                    <span className='text-xs text-neutral-70'>Last Update</span>
+                                    <span className='text-xs'>2 Hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </StudentTemplate>
     )
