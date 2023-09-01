@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Button from '../../atoms/button'
 
-export default function ListClassActionPanel() {
+export default function MyClassActionPanel() {
     const [search, setSearch] = useState('')
 
     return (

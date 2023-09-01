@@ -3,7 +3,6 @@
 // import './App.css'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import MyClass from './pages/my-class'
-import ListClass from './pages/list-class'
 
 function App() {
 
@@ -17,9 +16,8 @@ function App() {
           element={<Navigate to="/" />}
         />
       </Route> */}
-      <Route path="/" element={<Navigate to="list-class" />} />
+      <Route path="/" element={<Navigate to="my-class" />} />
       <Route path="my-class" element={<MyClass />} />
-      <Route path="list-class" element={<ListClass />} />
       <Route
         path="*"
         element={<Navigate to="/" />}
