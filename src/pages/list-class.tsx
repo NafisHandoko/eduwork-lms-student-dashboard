@@ -6,6 +6,7 @@ import { HiBolt, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi2";
 
 export default function ListClass() {
     const [isExpand, setIsExpand] = useState(true)
+    const progressClass = 38
 
     return (
         <StudentTemplate isExpand={isExpand}>
@@ -36,6 +37,15 @@ export default function ListClass() {
                                 <div className='flex flex-col'>
                                     <span className='text-xs text-neutral-70'>Last Update</span>
                                     <span className='text-xs'>2 Hour ago</span>
+                                </div>
+                            </div>
+                            <div className='flex flex-col gap-2'>
+                                <div className='flex flex-row items-center justify-between'>
+                                    <span className='text-xs font-medium text-text-paragraph'>Progress Class</span>
+                                    <span className='text-xs font-medium text-text-heading'>38%</span>
+                                </div>
+                                <div className='w-full bg-primary-surface rounded-full h-1.5'>
+                                    <div className={`bg-primary-main rounded-full h-full`} style={{ width: `${progressClass}%` }}></div>
                                 </div>
                             </div>
                         </div>
