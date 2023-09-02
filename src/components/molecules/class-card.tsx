@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CardDummyImg from '../../assets/dummy/list-class-card.png'
 import { HiBolt, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi2";
 
@@ -5,7 +6,7 @@ export default function ClassCard() {
   const progressClass = 38
 
   return (
-    <div className='flex flex-col rounded-lg bg-white max-w-1/3 rounded-lg'>
+    <Link to="1" className='flex flex-col rounded-lg bg-white max-w-1/3 rounded-lg'>
       {/* <img src={CardDummyImg} alt="" className='object-cover rounded-lg' /> */}
       <div className={`h-48 bg-cover bg-center rounded-lg`} style={{ backgroundImage: `url(${CardDummyImg})` }}></div>
       <div className='flex flex-col gap-2 p-6'>
@@ -34,6 +35,6 @@ export default function ClassCard() {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
