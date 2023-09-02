@@ -1,12 +1,9 @@
-import { useState } from 'react'
 import StudentTemplate from '../components/templates/student-template'
 import MyClassActionPanel from '../components/molecules/my-class/action-panel'
 import CardDummyImg from '../assets/dummy/list-class-card.png'
 import ClassCard from '../components/molecules/class-card';
-import Topbar from '../components/molecules/topbar';
 
 export default function MyClass() {
-    const [isExpand, setIsExpand] = useState(true)
     const progressClass = 38
 
     const dummyCards = [
