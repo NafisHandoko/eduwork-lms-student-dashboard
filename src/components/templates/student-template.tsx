@@ -1,15 +1,29 @@
+import { useState } from 'react'
 import LeftSidebar from '../molecules/left-sidebar'
+import Topbar from '../molecules/topbar'
 
-export default function StudentTemplate({ children, isExpand }: any) {
+const Default = function ({ children, title }: any) {
+    const [isExpand, setIsExpand] = useState(true)
+
     return (
-        <div className="flex flex-row items-stretch h-screen bg-primary-surface w-full">
+        <div className="flex flex-row items-stretch h-screen w-full">
             {/* left-sidebar */}
             <LeftSidebar isExpand={isExpand}></LeftSidebar>
 
             {/* main content */}
             <div className="w-full">
+                {/* topbar */}
+                <Topbar.Default title={title} isExpand={isExpand} setIsExpand={setIsExpand} />
+
+                {/* main content */}
                 {children}
             </div>
         </div>
     )
 }
+
+const StudentTemplate = {
+    Default
+}
+
+export default StudentTemplate

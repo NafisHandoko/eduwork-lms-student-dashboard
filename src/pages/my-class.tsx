@@ -3,6 +3,7 @@ import StudentTemplate from '../components/templates/student-template'
 import MyClassActionPanel from '../components/molecules/my-class/action-panel'
 import CardDummyImg from '../assets/dummy/list-class-card.png'
 import ClassCard from '../components/molecules/class-card';
+import Topbar from '../components/molecules/topbar';
 
 export default function MyClass() {
     const [isExpand, setIsExpand] = useState(true)
@@ -28,15 +29,9 @@ export default function MyClass() {
     const classCards = dummyCards
 
     return (
-        <StudentTemplate isExpand={isExpand}>
-            {/* topbar */}
-            <div className="py-3 px-4 bg-white flex flex-row gap-4">
-                <button onClick={() => setIsExpand(!isExpand)}><i className="bi bi-list text-xl font-bold"></i></button>
-                <h1 className="text-xl font-bold">List Community</h1>
-            </div>
-
+        <StudentTemplate.Default title="My Class" >
             {/* main content */}
-            <div className='flex flex-col gap-5 p-5'>
+            <div className='flex flex-col gap-5 p-5 bg-primary-surface'>
                 <MyClassActionPanel />
                 <div className='grid grid-cols-3 gap-3'>
 
@@ -47,6 +42,6 @@ export default function MyClass() {
                     <ClassCard />
                 </div>
             </div>
-        </StudentTemplate>
+        </StudentTemplate.Default>
     )
 }
