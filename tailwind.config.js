@@ -12,6 +12,7 @@ export default {
           "main": "#3F85EC",
           "border": "#A2BEF6"
         },
+        "success": "#29CC6A",
         "neutral": {
           "10": "#FFFFFF",
           "40": "#E0E0E0",
