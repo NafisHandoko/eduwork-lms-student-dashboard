@@ -22,8 +22,28 @@ const Default = function ({ children, title }: any) {
     )
 }
 
+const ClassChapter = function ({ children }: any) {
+    const [isExpand, setIsExpand] = useState(true)
+
+    return (
+        <div className="flex flex-row items-stretch h-screen w-full">
+            {/* left-sidebar */}
+            <LeftSidebar isExpand={isExpand}></LeftSidebar>
+
+            {/* main content */}
+            <div className="w-full">
+                {/* topbar */}
+                <Topbar.ClassChapter isExpand={isExpand} setIsExpand={setIsExpand} />
+
+                {/* main content */}
+                {children}
+            </div>
+        </div>
+    )
+}
+
 const StudentTemplate = {
-    Default
+    Default, ClassChapter
 }
 
 export default StudentTemplate

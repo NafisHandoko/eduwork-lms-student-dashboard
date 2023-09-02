@@ -3,6 +3,7 @@
 // import './App.css'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import MyClass from './pages/my-class'
+import ClassChapter from './pages/class-chapter'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       </Route> */}
       <Route path="/" element={<Navigate to="my-class" />} />
       <Route path="my-class" element={<MyClass />} />
+      <Route path="my-class/:id" element={<ClassChapter />} />
       <Route
         path="*"
         element={<Navigate to="/" />}

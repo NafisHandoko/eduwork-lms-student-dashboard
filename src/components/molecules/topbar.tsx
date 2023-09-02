@@ -19,7 +19,7 @@ const ClassChapter = function ({ isExpand, setIsExpand }: any) {
 }
 
 const Topbar = {
-    Default
+    Default, ClassChapter
 }
 
 export default Topbar
