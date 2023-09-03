@@ -12,7 +12,6 @@ export default {
           "main": "#3F85EC",
           "border": "#A2BEF6"
         },
-        "success": "#29CC6A",
         "neutral": {
           "10": "#FFFFFF",
           "40": "#E0E0E0",
@@ -24,7 +23,8 @@ export default {
           "paragraph": "#676767"
         },
         "flowkit": {
-          "red": "#FF0101"
+          "red": "#FF0101",
+          "green": "#29CC6A"
         }
       }
     },
