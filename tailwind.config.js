@@ -35,7 +35,8 @@ export default {
         },
         "flowkit": {
           "red": "#FF0101",
-          "green": "#29CC6A"
+          "green": "#29CC6A",
+          "cream": "#FFF7DC"
         }
       }
     },
