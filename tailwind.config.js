@@ -18,6 +18,14 @@ export default {
           "60": "#9E9E9E",
           "70": "#757575"
         },
+        "success": {
+          "main": "#43936C",
+          "surface": "#EAFFF5"
+        },
+        "danger": {
+          "main": "#CB3A31",
+          "surface": "#FFF4F2"
+        },
         "text": {
           "heading": "#303030",
           "paragraph": "#676767"
