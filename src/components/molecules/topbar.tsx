@@ -1,3 +1,5 @@
+import TabMenu from "../atoms/tab-menu"
+
 const Default = function ({ isExpand, setIsExpand, title }: any) {
     return (
         <div className="h-[70px] px-4 bg-white flex flex-row gap-4 items-center">
@@ -16,8 +18,8 @@ const ClassChapter = function ({ isExpand, setIsExpand }: any) {
                 <option value="1">Kelas UI/UX Design</option>
             </select>
             <div className="flex flex-row h-full gap-2">
-                <div className="border-4 border-transparent border-b-primary-main text-primary-main flex items-center justify-center px-2">Material</div>
-                <div className="border-4 border-transparent text-neutral-70 flex items-center justify-center px-2">All Task</div>
+                <TabMenu path="material" text="Material" />
+                <TabMenu path="all-task" text="All Task" />
             </div>
         </div>
     )
