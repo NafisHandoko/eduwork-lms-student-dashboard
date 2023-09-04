@@ -4,8 +4,10 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import MyClass from './pages/my-class'
 import ClassChapter from './pages/class-chapter'
-import ClassMaterial from './components/organisms/material'
 import ClassAllTask from './components/organisms/all-task'
+import ClassMaterial from './components/organisms/material'
+import MainMaterial from './components/organisms/material/main-material'
+import OtherMaterial from './components/organisms/material/other-material'
 
 function App() {
 
@@ -22,7 +24,10 @@ function App() {
       <Route path="/" element={<Navigate to="my-class" />} />
       <Route path="my-class" element={<MyClass />} />
       <Route path="my-class/:id" element={<ClassChapter />}>
-        <Route path="material" element={<ClassMaterial />} />
+        <Route path="material" element={<ClassMaterial />}>
+          <Route path="main" element={<MainMaterial />} />
+          <Route path="other" element={<OtherMaterial />} />
+        </Route>
         <Route path="all-task" element={<ClassAllTask />} />
       </Route>
       <Route
