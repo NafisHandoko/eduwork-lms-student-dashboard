@@ -26,7 +26,7 @@ const ClassChapter = function ({ children }: any) {
     const [isExpand, setIsExpand] = useState(true)
 
     return (
-        <div className="flex flex-row items-stretch h-screen w-full">
+        <div className="flex flex-row items-stretch h-screen max-w-full">
             {/* left-sidebar */}
             <LeftSidebar isExpand={isExpand}></LeftSidebar>
 

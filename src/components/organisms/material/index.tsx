@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Button from "../../atoms/button";
 import TabMenu from "../../atoms/tab-menu";
+import ClassSection from "../class-section";
 
 export default function ClassMaterial() {
     return (
@@ -42,7 +43,9 @@ export default function ClassMaterial() {
                     <Outlet />
                 </div>
             </div>
-            <div className="flex flex-col w-1/4 bg-blue-400"></div>
+            <div className="flex flex-col w-1/4">
+                <ClassSection />
+            </div>
         </div>
     )
 }
