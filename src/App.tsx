@@ -9,6 +9,8 @@ import ClassMaterial from './components/organisms/material'
 import MainMaterial from './components/organisms/material/main-material'
 import OtherMaterial from './components/organisms/material/other-material'
 import Task from './components/organisms/material/task'
+import Forum from './components/organisms/material/forum'
+import Complain from './components/organisms/material/complain'
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
           <Route path="main" element={<MainMaterial />} />
           <Route path="other" element={<OtherMaterial />} />
           <Route path="task" element={<Task />} />
+          <Route path="forum" element={<Forum />} />
+          <Route path="complain" element={<Complain />} />
         </Route>
         <Route path="all-task" element={<ClassAllTask />} />
       </Route>

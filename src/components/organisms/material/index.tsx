@@ -38,7 +38,7 @@ export default function ClassMaterial() {
                         <TabMenu path="task" text="Task" />
                         <TabMenu path="other" text="Contact Mentor" />
                         <TabMenu path="forum" text="Ask Forum" />
-                        <TabMenu path="other" text="Complain" />
+                        <TabMenu path="complain" text="Complain" />
                         <TabMenu path="other" text="Reviews" />
                     </div>
                     <Outlet />
