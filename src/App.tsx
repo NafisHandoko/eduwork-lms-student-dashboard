@@ -8,6 +8,7 @@ import ClassAllTask from './components/organisms/all-task'
 import ClassMaterial from './components/organisms/material'
 import MainMaterial from './components/organisms/material/main-material'
 import OtherMaterial from './components/organisms/material/other-material'
+import Task from './components/organisms/material/task'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="material" element={<ClassMaterial />}>
           <Route path="main" element={<MainMaterial />} />
           <Route path="other" element={<OtherMaterial />} />
+          <Route path="task" element={<Task />} />
         </Route>
         <Route path="all-task" element={<ClassAllTask />} />
       </Route>

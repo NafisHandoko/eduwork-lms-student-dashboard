@@ -32,11 +32,12 @@ export default function ClassMaterial() {
                     <iframe width="100%" height="400px" src="https://www.youtube.com/embed/qZIQAk-BUEc?si=AfcsPrpHXIRt9d-y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="flex flex-row gap-2 h-[60px] mx-7 border-b border-b-[#dbdbdb]">
+                    <div className="flex flex-row gap-2 h-[60px] mx-7 border-b border-b-[#dbdbdb] overflow-x-scroll whitespace-nowrap">
                         <TabMenu path="main" text="Main Material" />
                         <TabMenu path="other" text="Other Material" />
+                        <TabMenu path="task" text="Task" />
                         <TabMenu path="other" text="Contact Mentor" />
-                        <TabMenu path="other" text="Ask Forum" />
+                        <TabMenu path="forum" text="Ask Forum" />
                         <TabMenu path="other" text="Complain" />
                         <TabMenu path="other" text="Reviews" />
                     </div>
