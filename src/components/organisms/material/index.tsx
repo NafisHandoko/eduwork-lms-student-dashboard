@@ -36,10 +36,10 @@ export default function ClassMaterial() {
                         <TabMenu path="main" text="Main Material" />
                         <TabMenu path="other" text="Other Material" />
                         <TabMenu path="task" text="Task" />
-                        <TabMenu path="other" text="Contact Mentor" />
+                        <TabMenu path="mentor" text="Contact Mentor" />
                         <TabMenu path="forum" text="Ask Forum" />
                         <TabMenu path="complain" text="Complain" />
-                        <TabMenu path="other" text="Reviews" />
+                        <TabMenu path="reviews" text="Reviews" />
                     </div>
                     <Outlet />
                 </div>
