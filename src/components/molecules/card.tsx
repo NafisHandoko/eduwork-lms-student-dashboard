@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
-import CardDummyImg from '../../assets/dummy/list-class-card.png'
-import { HiBolt, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi2";
+import MyClassDummyImg from '../../assets/dummy/list-class-card.png'
+import OtherMaterialDummyImg from '../../assets/dummy/other-material-card.png'
+import { HiBolt, HiOutlinePencil, HiOutlineTrash, HiStar } from "react-icons/hi2";
 
-export default function ClassCard() {
+function MyClass() {
   const progressClass = 38
 
   return (
     <Link to="1/material/main" className='flex flex-col rounded-lg bg-white max-w-1/3 rounded-lg'>
-      {/* <img src={CardDummyImg} alt="" className='object-cover rounded-lg' /> */}
-      <div className={`h-48 bg-cover bg-center rounded-lg`} style={{ backgroundImage: `url(${CardDummyImg})` }}></div>
+      {/* <img src={MyClassDummyImg} alt="" className='object-cover rounded-lg' /> */}
+      <div className={`h-48 bg-cover bg-center rounded-lg`} style={{ backgroundImage: `url(${MyClassDummyImg})` }}></div>
       <div className='flex flex-col gap-2 p-6'>
         <h2 className='font-medium'>Intro to UI/UX Designer</h2>
         <div className='flex flex-row items-center justify-between gap-3'>
@@ -38,3 +39,34 @@ export default function ClassCard() {
     </Link>
   )
 }
+
+function OtherMaterial() {
+  return (
+    <div className='border rounded-lg bg-white max-w-1/3 p-4 flex flex-row items-stretch gap-3'>
+      <div className='rounded-lg h-full aspect-square'>
+        <img src={OtherMaterialDummyImg} alt="" className='rounded-lg object-cover' />
+      </div>
+      <div className='flex flex-col gap-1'>
+        <h3 className='font-bold text-sm text-neutral-100'>Belajar Html Css  yang cepat dan </h3>
+        <span className='text-xs text-neutral-90'>Pelita Nur Najmina</span>
+        <div className='flex flex-row items-center gap-1'>
+          <span className='font-medium text-xs text-secondary-hover'>4,8</span>
+          <div className='flex flex-row items-center'>
+            <HiStar className="text-secondary-main" />
+            <HiStar className="text-secondary-main" />
+            <HiStar className="text-secondary-main" />
+            <HiStar className="text-secondary-main" />
+            <HiStar className="text-neutral-40" />
+          </div>
+          <span className='text-xs text-neutral-60'>(100+)</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const Card = {
+  MyClass, OtherMaterial
+}
+
+export default Card
