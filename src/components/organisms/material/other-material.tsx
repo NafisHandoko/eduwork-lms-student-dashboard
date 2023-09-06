@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HiChevronDown, HiMagnifyingGlass } from "react-icons/hi2";
 import Card from "../../molecules/card";
+import Dropdown from "../../atoms/dropdown";
 
 export default function OtherMaterial() {
   const [search, setSearch] = useState('')
@@ -28,14 +29,18 @@ export default function OtherMaterial() {
         <div className="flex flex-row items-center justify-between gap-2">
           <h1 className="font-bold text-2xl">Referensi Video Materi Lainya.. </h1>
           <div className="flex flex-row gap-3 items-stretch">
-            <button className='flex flex-row items-center gap-2 bg-white border border-primary-main px-4 py-1 text-primary-main rounded-full whitespace-nowrap'>
-              <span>Rating</span>
-              <HiChevronDown />
-            </button>
-            <button className='flex flex-row items-center gap-2 bg-white border border-primary-main px-4 text-primary-main rounded-full whitespace-nowrap'>
-              <span>Terbaru</span>
-              <HiChevronDown />
-            </button>
+            <Dropdown>
+              <option value="0">Rating</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </Dropdown>
+            <Dropdown>
+              <option value="0">Terbaru</option>
+              <option value="1">Populer</option>
+            </Dropdown>
             <button className='flex flex-row items-center gap-2 bg-white border border-primary-main px-4 text-primary-main rounded-full whitespace-nowrap'>
               <span>Filter</span>
               <i className="bi bi-filter"></i>
