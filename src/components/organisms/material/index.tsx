@@ -29,7 +29,7 @@ export default function ClassMaterial() {
                     <p>Hai Guys, Setelah nonton video ini nanti akan ada tugas, jangan lupa  klik tombol “selesai” kanan atas ya setelah itu kamu bisa mulai mengerjakan tugas dibawah ini , klik disini</p>
                 </div>
                 <div>
-                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/qZIQAk-BUEc?si=AfcsPrpHXIRt9d-y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
+                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/1OiuLxkIIj0?si=Y7cuaE4jZjzcTSvu" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
                 </div>
                 <div className="flex flex-col gap-5">
                     <div className="flex flex-row gap-2 h-[60px] mx-7 border-b border-b-[#dbdbdb] overflow-x-scroll whitespace-nowrap">

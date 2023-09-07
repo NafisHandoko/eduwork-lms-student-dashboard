@@ -5,7 +5,7 @@ import SidebarMenu from '../atoms/sidebar-menu'
 export default function LeftSidebar({ isExpand }: any) {
     return (
         <div className={`h-full bg-white transition-all py-3 ${isExpand ? 'w-1/6' : 'w-[5%]'}`}>
-            <div className={`flex items-center justify-center py-2 ${isExpand ? 'px-6' : ''}`}>
+            <div className={`flex items-center justify-center py-2 ${isExpand ? 'px-6' : 'px-4'}`}>
                 <img src={isExpand ? EduworkLogo : EduworkLogoMini} alt="" />
             </div>
             {isExpand ?
