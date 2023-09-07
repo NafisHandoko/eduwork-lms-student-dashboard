@@ -12,6 +12,7 @@ import Task from './components/organisms/material/task'
 import Forum from './components/organisms/material/forum'
 import Complain from './components/organisms/material/complain'
 import Mentor from './components/organisms/material/mentor'
+import Splash from './components/organisms/splash'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         </Route>
         <Route path="all-task" element={<ClassAllTask />} />
       </Route>
+      <Route path="splash" element={<Splash />} />
       <Route
         path="*"
         element={<Navigate to="/" />}
