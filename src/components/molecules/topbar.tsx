@@ -1,18 +1,18 @@
 import Dropdown from "../atoms/dropdown"
 import TabMenu from "../atoms/tab-menu"
 
-const Default = function ({ isExpand, setIsExpand, title }: any) {
+const Default = function ({ isExpand, setIsExpand, title, className, ...props }: any) {
     return (
-        <div className="h-[70px] px-4 bg-white flex flex-row gap-4 items-center">
+        <div className={`h-[70px] px-4 bg-white flex flex-row gap-4 items-center ${className}`} {...props}>
             <button onClick={() => setIsExpand(!isExpand)}><i className="bi bi-list text-xl font-bold"></i></button>
             <h1 className="text-xl font-bold">{title}</h1>
         </div>
     )
 }
 
-const ClassChapter = function ({ isExpand, setIsExpand }: any) {
+const ClassChapter = function ({ isExpand, setIsExpand, className, ...props }: any) {
     return (
-        <div className="h-[70px] px-4 bg-white flex flex-row gap-4 items-center">
+        <div className={`h-[70px] px-4 bg-white flex flex-row gap-4 items-center ${className}`} {...props}>
             <button onClick={() => setIsExpand(!isExpand)}><i className="bi bi-list text-xl font-bold"></i></button>
             <Dropdown>
                 <option value="0">Kelas Digital Marketing</option>

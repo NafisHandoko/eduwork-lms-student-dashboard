@@ -6,17 +6,19 @@ const Default = function ({ children, title }: any) {
     const [isExpand, setIsExpand] = useState(true)
 
     return (
-        <div className="flex flex-row items-stretch h-screen w-full">
+        <div className="flex flex-row items-stretch max-h-screen w-full">
             {/* left-sidebar */}
             <LeftSidebar isExpand={isExpand}></LeftSidebar>
 
             {/* main content */}
-            <div className="w-full">
+            <div className="w-full overflow-y-scroll">
                 {/* topbar */}
-                <Topbar.Default title={title} isExpand={isExpand} setIsExpand={setIsExpand} />
+                <Topbar.Default title={title} isExpand={isExpand} setIsExpand={setIsExpand} className="fixed w-full z-20" />
 
                 {/* main content */}
-                {children}
+                <div className='mt-16'>
+                    {children}
+                </div>
             </div>
         </div>
     )
@@ -26,17 +28,19 @@ const ClassChapter = function ({ children }: any) {
     const [isExpand, setIsExpand] = useState(true)
 
     return (
-        <div className="flex flex-row items-stretch h-screen max-w-full">
+        <div className="flex flex-row items-stretch max-h-screen w-full">
             {/* left-sidebar */}
             <LeftSidebar isExpand={isExpand}></LeftSidebar>
 
             {/* main content */}
-            <div className="w-full">
+            <div className="w-full overflow-y-scroll">
                 {/* topbar */}
-                <Topbar.ClassChapter isExpand={isExpand} setIsExpand={setIsExpand} />
+                <Topbar.ClassChapter isExpand={isExpand} setIsExpand={setIsExpand} className="fixed w-full z-20" />
 
                 {/* main content */}
-                {children}
+                <div className='mt-16'>
+                    {children}
+                </div>
             </div>
         </div>
     )
