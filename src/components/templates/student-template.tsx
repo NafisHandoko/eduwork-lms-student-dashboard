@@ -38,7 +38,7 @@ const ClassChapter = function ({ children }: any) {
                 <Topbar.ClassChapter isExpand={isExpand} setIsExpand={setIsExpand} className="fixed w-full z-20" />
 
                 {/* main content */}
-                <div className='mt-20'>
+                <div className='mt-[70px]'>
                     {children}
                 </div>
             </div>
