@@ -11,6 +11,7 @@ import OtherMaterial from './components/organisms/material/other-material'
 import Task from './components/organisms/material/task'
 import Forum from './components/organisms/material/forum'
 import Complain from './components/organisms/material/complain'
+import Mentor from './components/organisms/material/mentor'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="main" element={<MainMaterial />} />
           <Route path="other" element={<OtherMaterial />} />
           <Route path="task" element={<Task />} />
+          <Route path="mentor" element={<Mentor />} />
           <Route path="forum" element={<Forum />} />
           <Route path="complain" element={<Complain />} />
         </Route>
