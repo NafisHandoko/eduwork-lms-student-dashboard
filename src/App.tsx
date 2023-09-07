@@ -13,14 +13,16 @@ import Forum from './components/organisms/material/forum'
 import Complain from './components/organisms/material/complain'
 import Mentor from './components/organisms/material/mentor'
 import Splash from './components/organisms/splash'
+import { useState } from 'react'
 
 function App() {
+  const [isExpand, setIsExpand] = useState(true)
 
   return (
     <Routes>
       <Route path="/" element={<Navigate to="my-class" />} />
-      <Route path="my-class" element={<MyClass />} />
-      <Route path="my-class/:id" element={<ClassChapter />}>
+      <Route path="my-class" element={<MyClass isExpand={isExpand} setIsExpand={setIsExpand} />} />
+      <Route path="my-class/:id" element={<ClassChapter isExpand={isExpand} setIsExpand={setIsExpand} />}>
         <Route path="material" element={<ClassMaterial />}>
           <Route path="main" element={<MainMaterial />} />
           <Route path="other" element={<OtherMaterial />} />

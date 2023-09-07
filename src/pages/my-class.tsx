@@ -1,11 +1,8 @@
 import StudentTemplate from '../components/templates/student-template'
 import MyClassActionPanel from '../components/molecules/my-class/action-panel'
-import CardDummyImg from '../assets/dummy/list-class-card.png'
 import Card from '../components/molecules/card';
 
-export default function MyClass() {
-    const progressClass = 38
-
+export default function MyClass({ isExpand, setIsExpand }: any) {
     const dummyCards = [
         {
             id: 1
@@ -26,7 +23,7 @@ export default function MyClass() {
     const classCards = dummyCards
 
     return (
-        <StudentTemplate.Default title="My Class" >
+        <StudentTemplate.Default title="My Class" isExpand={isExpand} setIsExpand={setIsExpand} >
             {/* main content */}
             <div className='flex flex-col gap-5 p-5 bg-primary-surface'>
                 <MyClassActionPanel />

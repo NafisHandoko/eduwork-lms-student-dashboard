@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import LeftSidebar from '../molecules/left-sidebar'
 import Topbar from '../molecules/topbar'
 
-const Default = function ({ children, title }: any) {
-    const [isExpand, setIsExpand] = useState(true)
-
+const Default = function ({ children, title, isExpand, setIsExpand }: any) {
     return (
         <div className="flex flex-row items-stretch max-h-screen w-full">
             {/* left-sidebar */}
@@ -24,9 +21,7 @@ const Default = function ({ children, title }: any) {
     )
 }
 
-const ClassChapter = function ({ children }: any) {
-    const [isExpand, setIsExpand] = useState(true)
-
+const ClassChapter = function ({ children, isExpand, setIsExpand }: any) {
     return (
         <div className="flex flex-row items-stretch max-h-screen w-full">
             {/* left-sidebar */}
