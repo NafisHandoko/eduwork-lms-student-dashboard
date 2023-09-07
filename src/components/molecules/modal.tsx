@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HiExclamationCircle } from "react-icons/hi2";
 
-export default function Modal({ type, title, body, onConfirm = () => {} }: any) {
+export default function Modal({ type, title, body, confirmBtnText = 'Confirm', cancelBtnText = 'Cancel', onConfirm = () => { } }: any) {
     const [isDismissed, setIsDismissed] = useState(false)
 
     return (
@@ -18,8 +18,8 @@ export default function Modal({ type, title, body, onConfirm = () => {} }: any) 
                 </div>
                 <div className="bg-neutral-20 flex flex-col items-end p-3 rounded-b-lg">
                     <div className="flex flex-row items-center gap-2">
-                        <button className="bg-white text-sm text-neutral-90 px-4 py-2 rounded-lg" onClick={() => setIsDismissed(true)}>Cancel</button>
-                        <button className={`bg-primary-main text-sm text-white px-4 py-2 rounded-lg ${type == 'danger' ? 'bg-danger-main' : ''}`} onClick={onConfirm}>Confirm</button>
+                        <button className="bg-white text-sm text-neutral-90 px-4 py-2 rounded-lg" onClick={() => setIsDismissed(true)}>{cancelBtnText}</button>
+                        <button className={`bg-primary-main text-sm text-white px-4 py-2 rounded-lg ${type == 'danger' ? 'bg-danger-main' : ''}`} onClick={onConfirm}>{confirmBtnText}</button>
                     </div>
                 </div>
             </div>
