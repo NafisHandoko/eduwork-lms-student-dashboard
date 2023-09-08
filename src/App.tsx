@@ -14,6 +14,7 @@ import Complain from './components/organisms/material/complain'
 import Mentor from './components/organisms/material/mentor'
 import Splash from './components/organisms/splash'
 import { useState } from 'react'
+import Reviews from './components/organisms/material/reviews'
 
 function App() {
   const [isExpand, setIsExpand] = useState(true)
@@ -30,6 +31,7 @@ function App() {
           <Route path="mentor" element={<Mentor />} />
           <Route path="forum" element={<Forum />} />
           <Route path="complain" element={<Complain />} />
+          <Route path="reviews" element={<Reviews />} />
         </Route>
         <Route path="all-task" element={<ClassAllTask />} />
       </Route>
