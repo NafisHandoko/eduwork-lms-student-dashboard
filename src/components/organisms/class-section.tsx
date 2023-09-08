@@ -7,8 +7,9 @@ export default function ClassSection() {
                 <h2 className="text-2xl font-bold">SECTION</h2>
             </div>
             <div className="flex flex-col w-full">
-                <Collapse />
-                <Collapse />
+                <Collapse status="finished" />
+                <Collapse status="ongoing" />
+                <Collapse status="locked" />
             </div>
         </>
     )
