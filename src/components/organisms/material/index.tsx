@@ -33,13 +33,13 @@ export default function ClassMaterial() {
                 </div>
                 <div className="flex flex-col gap-5">
                     <div className="flex flex-row gap-2 h-[60px] mx-7 border-b border-b-[#dbdbdb] overflow-x-scroll whitespace-nowrap">
-                        <TabMenu path="main" text="Main Material" />
-                        <TabMenu path="other" text="Other Material" />
-                        <TabMenu path="task" text="Task" />
-                        <TabMenu path="mentor" text="Contact Mentor" />
-                        <TabMenu path="forum" text="Ask Forum" />
-                        <TabMenu path="complain" text="Complain" />
-                        <TabMenu path="reviews" text="Reviews" />
+                        <TabMenu path="main" text="Materi Utama" />
+                        <TabMenu path="other" text="Materi Lainnya" />
+                        <TabMenu path="task" text="Tugas" />
+                        <TabMenu path="mentor" text="Kontak Mentor" />
+                        <TabMenu path="forum" text="Forum" />
+                        <TabMenu path="complain" text="Keluhan" />
+                        <TabMenu path="reviews" text="Ulasan" />
                     </div>
                     <Outlet />
                 </div>
