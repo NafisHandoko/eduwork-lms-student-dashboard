@@ -1,4 +1,4 @@
-import Table from "../../molecules/table";
+import { TaskTable } from "./task";
 
 export default function MainMaterial() {
     return (
@@ -13,7 +13,7 @@ export default function MainMaterial() {
                     Download slide PowerPoint (.PPTX) <a href="#" className="font-bold underline">DISINI</a>
                 </p>
             </div>
-            <Table />
+            <TaskTable />
         </div>
     )
 }
