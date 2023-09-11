@@ -26,6 +26,6 @@ export function TBody({ children }: any) {
 
 export function Table({ children }: any) {
     return (
-        <table className="table table-auto">{children}</table>
+        <table className="table table-auto w-full">{children}</table>
     )
 }
