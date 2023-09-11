@@ -3,7 +3,7 @@ import { HiChevronDown, HiMagnifyingGlass } from "react-icons/hi2";
 import Card from "../../molecules/card";
 import Dropdown from "../../atoms/dropdown";
 
-export default function OtherMaterial() {
+export function OtherMaterial() {
   const [search, setSearch] = useState('')
   const dummyCards = [
     {
@@ -69,9 +69,15 @@ export default function OtherMaterial() {
       <div className='grid grid-cols-3 gap-3'>
         {/* card */}
         {(otherMaterialCards && otherMaterialCards.length > 0) && otherMaterialCards.map((material, i) => (
-          <Card.OtherMaterial />
+          <Card.OtherMaterial2 />
         ))}
       </div>
     </div>
+  )
+}
+
+export function OtherMaterial2(){
+  return(
+    <div className="flex flex-col px-7"></div>
   )
 }
