@@ -1,4 +1,4 @@
-export default function Button({ text, type }: any) {
+export default function Button({ text, type, className, children, ...props }: any) {
     let _bg = 'bg-primary-main'
     let _cr = 'text-white'
 
@@ -10,6 +10,6 @@ export default function Button({ text, type }: any) {
     }
 
     return (
-        <button className={`rounded-full px-5 py-2 text-white whitespace-nowrap ${_bg} ${_cr}`}>{text}</button>
+        <button className={`rounded-full px-5 py-2 text-white whitespace-nowrap ${_bg} ${_cr} ${className}`} {...props}>{text || children}</button>
     )
 }
