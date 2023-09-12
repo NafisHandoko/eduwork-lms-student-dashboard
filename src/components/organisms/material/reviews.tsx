@@ -1,5 +1,7 @@
-import { HiStar, HiXMark } from "react-icons/hi2"
+import { HiPlus, HiStar, HiXMark } from "react-icons/hi2"
 import { useState } from 'react'
+import Button from "../../atoms/button"
+import Dropdown from "../../atoms/dropdown"
 
 function ReviewModal({ modalDismissed, setModalDismissed, onConfirm = () => { } }: any) {
     const [kritikSaran, setKritikSaran] = useState('')
@@ -69,11 +71,29 @@ function ReviewCard() {
     )
 }
 
+function ReviewBtnChild() {
+    return (
+        <>
+            <span>Tambah Ulasan</span>
+            <HiPlus />
+        </>
+    )
+}
+
 export default function Reviews() {
     const [modalDismissed, setModalDismissed] = useState(true)
     return (
         <div className="px-7 flex flex-col gap-5 items-start">
-            <button className="bg-primary-main text-white rounded-lg px-5 py-2 whitespace-nowrap" onClick={() => setModalDismissed(false)}>Add your review</button>
+            <div className="flex flex-row gap-2 justify-between w-full">
+                <Button type="primary" onClick={() => setModalDismissed(false)} className="flex flex-row items-center gap-2">
+                    <span>Tambah Ulasan</span>
+                    <HiPlus />
+                </Button>
+                <Dropdown>
+                    <option>Terbaru</option>
+                    <option>Terlama</option>
+                </Dropdown>
+            </div>
             <div className="flex flex-col gap-5">
                 <ReviewCard />
                 <ReviewCard />
