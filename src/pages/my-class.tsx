@@ -2,7 +2,7 @@ import StudentTemplate from '../components/templates/student-template'
 import MyClassActionPanel from '../components/molecules/my-class/action-panel'
 import Card from '../components/molecules/card';
 
-export default function MyClass({ isExpand, setIsExpand }: any) {
+export default function MyClass() {
     const dummyCards = [
         {
             id: 1
@@ -23,7 +23,7 @@ export default function MyClass({ isExpand, setIsExpand }: any) {
     const classCards = dummyCards
 
     return (
-        <StudentTemplate.Default title="My Class" isExpand={isExpand} setIsExpand={setIsExpand} >
+        <StudentTemplate.Default title="My Class">
             {/* main content */}
             <div className='flex flex-col gap-5 p-5 bg-primary-surface'>
                 <MyClassActionPanel />

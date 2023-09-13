@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import StudentTemplate from "../components/templates/student-template";
 
-export default function ClassChapter({ isExpand, setIsExpand }: any) {
+export default function ClassChapter() {
     return (
-        <StudentTemplate.ClassChapter isExpand={isExpand} setIsExpand={setIsExpand}>
+        <StudentTemplate.ClassChapter>
             <Outlet />
         </StudentTemplate.ClassChapter>
     )
