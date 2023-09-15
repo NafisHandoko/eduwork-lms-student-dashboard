@@ -9,7 +9,7 @@ function MyClass() {
     const progressClass = 38
 
     return (
-        <Link to="1/material/main" className='flex flex-col rounded-lg bg-white max-w-1/3 rounded-lg'>
+        <Link to="1/material/main" className='flex flex-col rounded-lg bg-white max-w-1/3 rounded-lg transition-all hover:shadow-2xl'>
             {/* <img src={MyClassDummyImg} alt="" className='object-cover rounded-lg' /> */}
             <div className={`h-48 bg-cover bg-center rounded-lg`} style={{ backgroundImage: `url(${MyClassDummyImg})` }}></div>
             <div className='flex flex-col gap-2 p-6'>
