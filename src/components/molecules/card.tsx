@@ -3,7 +3,7 @@ import MyClassDummyImg from '../../assets/dummy/list-class-card.png'
 import OtherMaterialDummyImg from '../../assets/dummy/other-material-card.png'
 import OtherMaterialDummyImg2 from '../../assets/dummy/other-material-card2.png'
 import BukalapakLogo from '../../assets/dummy/bukalapak-logo.png'
-import { HiBolt, HiOutlinePencil, HiOutlineTrash, HiStar } from "react-icons/hi2";
+import { HiBolt, HiOutlineTrash, HiStar } from "react-icons/hi2";
 
 function MyClass() {
     const progressClass = 38
@@ -17,7 +17,6 @@ function MyClass() {
                 <div className='flex flex-row items-center justify-between gap-3'>
                     <span className='text-sm font-medium'>Aria Dwitolio</span>
                     <div className='flex flex-row gap-2'>
-                        <button className='bg-primary-main w-7 h-7 flex items-center justify-center rounded-lg text-white text-sm'><HiOutlinePencil /></button>
                         <button className='bg-flowkit-red w-7 h-7 flex items-center justify-center rounded-lg text-white text-sm'><HiOutlineTrash /></button>
                     </div>
                 </div>
