@@ -1,7 +1,7 @@
 import EduworkLogo from '../../assets/eduwork-logo.png'
 import EduworkLogoMini from '../../assets/eduwork-logo-mini.png'
 import SidebarMenu from '../atoms/sidebar-menu'
-import { HiArrowLeftOnRectangle, HiOutlineBookOpen, HiOutlineBriefcase, HiOutlineCalendarDays, HiOutlineGlobeAsiaAustralia, HiOutlineQuestionMarkCircle, HiOutlineRectangleStack, HiOutlineTrophy, HiOutlineUser, HiOutlineXCircle, HiXMark } from 'react-icons/hi2'
+import { HiArrowLeftOnRectangle, HiOutlineBookOpen, HiOutlineBriefcase, HiOutlineCalendarDays, HiOutlineGlobeAsiaAustralia, HiOutlineQuestionMarkCircle, HiOutlineTrophy, HiOutlineUser, HiXMark } from 'react-icons/hi2'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleSidebar } from '../../store/sidebarSlice'
 
