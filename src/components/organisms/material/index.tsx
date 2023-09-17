@@ -2,7 +2,6 @@ import { Outlet } from "react-router-dom";
 import Button from "../../atoms/button";
 import TabMenu from "../../atoms/tab-menu";
 import ClassSection from "../class-section";
-import { HiXMark } from "react-icons/hi2";
 import Alert from "../../molecules/alert";
 
 export default function ClassMaterial() {
