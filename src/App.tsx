@@ -14,6 +14,7 @@ import Complain from './components/organisms/material/complain'
 import Mentor from './components/organisms/material/mentor'
 import Splash from './components/organisms/splash'
 import Reviews from './components/organisms/material/reviews'
+import Error404 from './pages/error-404'
 
 function App() {
   return (
@@ -33,9 +34,10 @@ function App() {
         <Route path="all-task" element={<ClassAllTask />} />
       </Route>
       <Route path="splash" element={<Splash />} />
+      <Route path="error404" element={<Error404 />} />
       <Route
         path="*"
-        element={<Navigate to="/" />}
+        element={<Navigate to="error404" />}
       />
     </Routes>
   )
