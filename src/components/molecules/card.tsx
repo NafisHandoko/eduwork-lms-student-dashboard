@@ -9,7 +9,7 @@ import Modal from './modal';
 
 function MyClass() {
     const progressClass = 38
-    const [modalDismissed, setModalDismissed] = useState(true)
+    const [modalDismissed, setModalDismissed] = useState<boolean>(true)
 
     function showModal(e: any) {
         e.stopPropagation()

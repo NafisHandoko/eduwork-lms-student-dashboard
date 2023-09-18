@@ -1,7 +1,16 @@
 import LeftSidebar from '../molecules/left-sidebar'
 import Topbar from '../molecules/topbar'
+import { ReactNode } from 'react'
 
-const Default = function ({ children, title }: any) {
+interface StudentTemplateDefaultProps {
+    children?: ReactNode;
+    title?: string;
+}
+interface StudentTemplateClassChapterProps {
+    children?: ReactNode;
+}
+
+const Default = function ({ children, title }: StudentTemplateDefaultProps) {
     return (
         <div className="flex flex-row items-stretch max-h-screen w-full">
             {/* left-sidebar */}
@@ -21,7 +30,7 @@ const Default = function ({ children, title }: any) {
     )
 }
 
-const ClassChapter = function ({ children }: any) {
+const ClassChapter = function ({ children }: StudentTemplateClassChapterProps) {
     return (
         <div className="flex flex-row items-stretch max-h-screen w-full">
             {/* left-sidebar */}

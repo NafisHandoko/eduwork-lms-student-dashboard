@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, ChangeEvent } from 'react'
 import Button from '../../atoms/button'
 import Input from '../../atoms/input'
 import { HiMagnifyingGlass } from 'react-icons/hi2'
@@ -13,7 +13,7 @@ export default function MyClassActionPanel() {
                 prefixIcon={<HiMagnifyingGlass className="text-neutral-60" />}
                 placeholder="Search class"
                 value={search}
-                onChange={(e: any) => setSearch(e.target.value)}
+                onChange={(e: ChangeEvent) => setSearch((e.target as HTMLInputElement).value)}
             />
             <div className='flex flex-row items-center gap-2 bg-white border border-primary-main px-4 text-primary-main rounded-full whitespace-nowrap'>
                 <input type="checkbox" name="last-update" id="last-update" />

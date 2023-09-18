@@ -1,6 +1,18 @@
+import { SetStateAction, MouseEventHandler, Dispatch } from 'react'
 import { HiExclamationCircle } from "react-icons/hi2";
 
-export default function Modal({ isDismissed, setIsDismissed, type, title, body, confirmBtnText = 'Confirm', cancelBtnText = 'Cancel', onConfirm = () => { } }: any) {
+interface ModalProps {
+    isDismissed: boolean;
+    setIsDismissed: Dispatch<SetStateAction<boolean>>;
+    type?: 'danger';
+    title?: string;
+    body?: string;
+    confirmBtnText?: string;
+    cancelBtnText?: string;
+    onConfirm?: MouseEventHandler;
+}
+
+export default function Modal({ isDismissed, setIsDismissed, type, title, body, confirmBtnText = 'Confirm', cancelBtnText = 'Cancel', onConfirm = () => { } }: ModalProps) {
     return (
         <div className={`fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 ${isDismissed ? 'hidden' : ''}`}>
             <div className="bg-white rounded-lg flex flex-col w-full md:w-1/3">

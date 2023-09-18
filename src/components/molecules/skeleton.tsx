@@ -1,5 +1,9 @@
-export default function Skeleton({ className, ...props }: any) {
+interface SkeletonProps {
+    className?: string;
+}
+
+export default function Skeleton({ className }: SkeletonProps) {
     return (
-        <div className={`animate-pulse bg-gray-300 ${className}`} {...props}></div>
+        <div className={`animate-pulse bg-gray-300 ${className}`}></div>
     )
 }

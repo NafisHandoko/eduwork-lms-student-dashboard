@@ -1,7 +1,14 @@
 import { useState } from "react"
 import { HiCheck, HiChevronDown, HiChevronUp, HiOutlineExclamationCircle, HiOutlineLockClosed, HiXMark } from "react-icons/hi2"
 
-function CollapseChild({ status }: any) {
+interface CollapseChildProps {
+    status: 'finished' | 'ongoing' | 'locked';
+}
+interface CollapseProps {
+    status: 'finished' | 'ongoing' | 'locked';
+}
+
+function CollapseChild({ status }: CollapseChildProps) {
     return (
         <div className={`flex flex-row items-center gap-3 px-3 py-2 border border-neutral-40 ${status == 'locked' ? 'bg-neutral-20' : 'bg-white'}`}>
             {status == 'finished' ?
@@ -14,7 +21,7 @@ function CollapseChild({ status }: any) {
     )
 }
 
-export default function Collapse({ status }: any) {
+export default function Collapse({ status }: CollapseProps) {
     const [isCollapsed, setIsCollapsed] = useState(true)
 
     return (

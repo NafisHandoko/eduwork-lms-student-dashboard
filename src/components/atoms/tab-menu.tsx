@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
 
-export default function TabMenu({ path, text }: any) {
+interface TabMenuProps {
+    path: string;
+    text: string;
+}
+
+export default function TabMenu({ path, text }: TabMenuProps) {
     return (
         <NavLink
             to={path}
