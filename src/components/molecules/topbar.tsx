@@ -3,6 +3,7 @@ import TabMenu from "../atoms/tab-menu"
 import { toggleSidebar } from "../../store/sidebarSlice"
 import { useDispatch, useSelector } from 'react-redux'
 import { HiOutlineBell } from "react-icons/hi2"
+import { SidebarStateType } from "../../store"
 
 interface TopbarDefaultProps {
     title?: string;
@@ -14,7 +15,7 @@ interface TopbarClassChapterProps {
 
 const Default = function ({ title, className }: TopbarDefaultProps) {
     const dispatch = useDispatch()
-    const isDesktopExpand = useSelector((state: any) => state.sidebar.desktop)
+    const isDesktopExpand = useSelector((state: SidebarStateType) => state.sidebar.desktop)
 
     return (
         <div className={`h-[70px] px-4 bg-white flex flex-row gap-4 items-center ${className}`}>
@@ -27,7 +28,7 @@ const Default = function ({ title, className }: TopbarDefaultProps) {
 
 const ClassChapter = function ({ className }: TopbarClassChapterProps) {
     const dispatch = useDispatch()
-    const isDesktopExpand = useSelector((state: any) => state.sidebar.desktop)
+    const isDesktopExpand = useSelector((state: SidebarStateType) => state.sidebar.desktop)
 
     return (
         <div className={`h-[70px] px-4 bg-white flex flex-row gap-4 items-center ${className}`}>
