@@ -4,14 +4,14 @@ import OtherMaterialDummyImg from '../../assets/dummy/other-material-card.png'
 import OtherMaterialDummyImg2 from '../../assets/dummy/other-material-card2.png'
 import BukalapakLogo from '../../assets/dummy/bukalapak-logo.png'
 import { HiBolt, HiOutlineTrash, HiStar } from "react-icons/hi2";
-import { useState } from 'react'
+import { MouseEvent, useState } from 'react'
 import Modal from './modal';
 
 function MyClass() {
     const progressClass = 38
     const [modalDismissed, setModalDismissed] = useState<boolean>(true)
 
-    function showModal(e: any) {
+    function showModal(e: MouseEvent) {
         e.stopPropagation()
         e.preventDefault()
         setModalDismissed(false)
