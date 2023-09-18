@@ -1,10 +1,11 @@
 import { SetStateAction, MouseEventHandler, Dispatch } from 'react'
-import { HiExclamationCircle } from "react-icons/hi2";
+import { HiCheckCircle, HiExclamationCircle } from "react-icons/hi2";
+import Button from '../atoms/button';
 
 interface ModalProps {
     isDismissed: boolean;
     setIsDismissed: Dispatch<SetStateAction<boolean>>;
-    type?: 'danger';
+    type?: 'danger' | 'success' | 'warning';
     title?: string;
     body?: string;
     confirmBtnText?: string;
@@ -21,14 +22,20 @@ export default function Modal({ isDismissed, setIsDismissed, type, title, body, 
                         {type == 'danger' &&
                             <span className="text-danger-main text-3xl"><HiExclamationCircle /></span>
                         }
+                        {type == 'success' &&
+                            <span className="text-success-main text-3xl"><HiCheckCircle /></span>
+                        }
+                        {type == 'warning' &&
+                            <span className="text-secondary-main text-3xl"><HiExclamationCircle /></span>
+                        }
                         <h1 className="text-neutral-90 text-xl font-medium">{title}</h1>
                     </div>
                     <p className="text-sm text-neutral-70">{body}</p>
                 </div>
                 <div className="bg-neutral-20 flex flex-col items-end p-3 rounded-b-lg">
                     <div className="flex flex-row items-center gap-2">
-                        <button className="bg-white text-sm text-neutral-90 px-4 py-2 rounded-lg" onClick={() => setIsDismissed(true)}>{cancelBtnText}</button>
-                        <button className={`text-sm text-white px-4 py-2 rounded-lg ${type == 'danger' ? 'bg-danger-main' : 'bg-primary-main'}`} onClick={onConfirm}>{confirmBtnText}</button>
+                        <Button text={cancelBtnText} type='light' borderRadius='lg' size='small' onClick={() => setIsDismissed(true)} />
+                        <Button text={confirmBtnText} type={type} borderRadius='lg' size='small' onClick={onConfirm} />
                     </div>
                 </div>
             </div>
