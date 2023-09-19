@@ -1,6 +1,6 @@
 import { useState, ChangeEvent } from 'react'
 import Input from '../../atoms/input'
-import { HiMagnifyingGlass } from 'react-icons/hi2'
+import { HiMagnifyingGlass, HiPlus } from 'react-icons/hi2'
 
 export default function MyClassActionPanel() {
     const [search, setSearch] = useState('')
@@ -8,10 +8,16 @@ export default function MyClassActionPanel() {
     return (
         <div className='flex flex-row gap-3 justify-between items-stretch'>
             <a
-                className='rounded-full px-5 py-2 text-white whitespace-nowrap bg-primary-main text-white'
+                className='hidden md:block rounded-full px-5 py-2 text-white whitespace-nowrap bg-primary-main text-white'
                 href="https://eduwork.id/kelas"
             >
                 Tambah Kelas
+            </a>
+            <a
+                className='md:hidden p-2 rounded-full bg-primary-main text-white text-2xl flex justify-center items-center'
+                href="https://eduwork.id/kelas"
+            >
+                <HiPlus />
             </a>
             <Input
                 prefixIcon={<HiMagnifyingGlass className="text-neutral-60" />}

@@ -11,7 +11,7 @@ interface InputProps {
 
 export default function Input({ prefixIcon, suffixIcon, className, placeholder, value, onChange }: InputProps) {
     return (
-        <form onSubmit={() => { }} className="relative md:w-full">
+        <form onSubmit={() => { }} className="relative w-full">
             <div className="flex absolute inset-y-0 left-0 items-center pl-5 pointer-events-none">{prefixIcon}</div>
             {/* <button type='button' onClick={() => { }} className="flex absolute inset-y-0 left-0 items-center pl-5 cursor-pointer">
                                 <i className="bi bi-emoji-smile text-relazee-blue"></i>

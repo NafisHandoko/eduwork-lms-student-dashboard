@@ -7,10 +7,10 @@ import Alert from "../../molecules/alert";
 export default function ClassMaterial() {
     return (
         <div className="flex flex-row items-stretch">
-            <div className="flex flex-col w-3/4 min-h-screen">
-                <div className="flex flex-row items-center justify-between bg-primary-surface px-7 py-3 sticky top-[70px]">
+            <div className="flex flex-col w-full md:w-3/4 min-h-screen">
+                <div className="flex flex-col sm:flex-row gap-3 md:items-center justify-between bg-primary-surface px-7 py-3 sticky top-[70px]">
                     {/* breadcrumb */}
-                    <div className="flex flex-row gap-2">
+                    <div className="flex flex-row gap-2 flex-wrap">
                         <div className="flex flex-row gap-2 items-center">
                             <span>My Class</span>
                             <span>&gt;</span>
@@ -45,7 +45,7 @@ export default function ClassMaterial() {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col w-1/4">
+            <div className="hidden md:flex flex-col w-1/4">
                 <ClassSection />
             </div>
         </div>
