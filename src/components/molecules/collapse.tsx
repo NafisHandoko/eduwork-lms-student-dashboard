@@ -26,7 +26,7 @@ export default function Collapse({ status }: CollapseProps) {
 
     return (
         <div className="flex flex-col">
-            <button onClick={() => setIsCollapsed(!isCollapsed)} className="flex flex-row items-center bg-primary-surface border border-neutral-40 p-3">
+            <button onClick={() => setIsCollapsed(!isCollapsed)} className="flex flex-row items-center bg-primary-surface border border-neutral-40 p-3 sticky top-[130px]">
                 {status == 'finished' ?
                     <HiCheck /> : status == 'ongoing' ?
                         <div className="bg-[#E0D700] rounded-lg p-1"><HiOutlineExclamationCircle /></div> : status == 'locked' ?
