@@ -19,10 +19,10 @@ const Default = function ({ children, title }: StudentTemplateDefaultProps) {
             {/* main content */}
             <div className="w-full overflow-y-scroll">
                 {/* topbar */}
-                <Topbar.Default title={title} className="fixed w-full md:w-[90%] z-10" />
+                <Topbar.Default title={title} className="sticky top-0 w-full z-10" />
 
                 {/* main content */}
-                <div className='mt-[70px]'>
+                <div>
                     {children}
                 </div>
             </div>
@@ -39,10 +39,10 @@ const ClassChapter = function ({ children }: StudentTemplateClassChapterProps) {
             {/* main content */}
             <div className="w-full overflow-y-scroll">
                 {/* topbar */}
-                <Topbar.ClassChapter className="fixed w-full md:w-[90%] z-10" />
+                <Topbar.ClassChapter className="sticky top-0 w-full z-10" />
 
                 {/* main content */}
-                <div className='mt-[70px]'>
+                <div>
                     {children}
                 </div>
             </div>
