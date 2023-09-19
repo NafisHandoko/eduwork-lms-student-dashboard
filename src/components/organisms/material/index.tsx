@@ -3,6 +3,7 @@ import Button from "../../atoms/button";
 import TabMenu from "../../atoms/tab-menu";
 import ClassSection from "../class-section";
 import Alert from "../../molecules/alert";
+import Toast from "../../molecules/toast";
 
 export default function ClassMaterial() {
     return (
@@ -26,7 +27,7 @@ export default function ClassMaterial() {
                     </div>
                     <Button text="Selesai > Next Materi" type="success" />
                 </div>
-                <Alert text="Hai Guys, Setelah nonton video ini nanti akan ada tugas, jangan lupa  klik tombol “selesai” kanan atas ya setelah itu kamu bisa mulai mengerjakan tugas dibawah ini , klik disini" />
+                <Alert type="warning" text="Hai Guys, Setelah nonton video ini nanti akan ada tugas, jangan lupa  klik tombol “selesai” kanan atas ya setelah itu kamu bisa mulai mengerjakan tugas dibawah ini , klik disini" />
                 <div>
                     <iframe width="100%" height="400px" src="https://www.youtube.com/embed/1OiuLxkIIj0?si=Y7cuaE4jZjzcTSvu" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
                 </div>
