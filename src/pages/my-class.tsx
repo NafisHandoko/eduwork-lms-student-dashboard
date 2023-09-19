@@ -29,8 +29,8 @@ export default function MyClass() {
                 <MyClassActionPanel />
                 <div className='grid grid-cols-3 gap-3'>
                     {/* card */}
-                    {(classCards && classCards.length > 0) && classCards.map((kelas, i) => (
-                        <Card.MyClass />
+                    {(classCards && classCards.length > 0) && classCards.map((kelas) => (
+                        <Card.MyClass key={kelas.id} />
                     ))}
                 </div>
             </div>

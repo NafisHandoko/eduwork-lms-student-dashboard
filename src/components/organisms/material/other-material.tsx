@@ -68,8 +68,8 @@ export function OtherMaterial() {
             </div>
             <div className='grid grid-cols-3 gap-3'>
                 {/* card */}
-                {(otherMaterialCards && otherMaterialCards.length > 0) && otherMaterialCards.map((material, i) => (
-                    <Card.OtherMaterial2 />
+                {(otherMaterialCards && otherMaterialCards.length > 0) && otherMaterialCards.map((material) => (
+                    <Card.OtherMaterial2 key={material.id} />
                 ))}
             </div>
         </div>

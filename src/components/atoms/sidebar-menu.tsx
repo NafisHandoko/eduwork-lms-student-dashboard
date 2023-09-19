@@ -15,7 +15,7 @@ export default function SidebarMenu({ path, icon, text }: SidebarMenuProps) {
     return (
         <NavLink
             to={path}
-            className={({ isActive, isPending }) =>
+            className={({ isActive }) =>
                 `flex flex-row items-center gap-3 px-6 py-4 border-l-4 ${isActive ? 'bg-primary-surface text-primary-main border-primary-main' : 'bg-white text-neutral-70 border-white hover:bg-primary-surface hover:text-primary-main hover:border-primary-main'}`
             }
         >
