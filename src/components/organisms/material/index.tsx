@@ -8,7 +8,7 @@ export default function ClassMaterial() {
     return (
         <div className="flex flex-row items-stretch">
             <div className="flex flex-col w-3/4 min-h-screen">
-                <div className="flex flex-row items-center justify-between bg-primary-surface px-7 py-3">
+                <div className="flex flex-row items-center justify-between bg-primary-surface px-7 py-3 sticky top-[70px]">
                     {/* breadcrumb */}
                     <div className="flex flex-row gap-2">
                         <div className="flex flex-row gap-2 items-center">
@@ -31,7 +31,7 @@ export default function ClassMaterial() {
                     <iframe width="100%" height="400px" src="https://www.youtube.com/embed/1OiuLxkIIj0?si=Y7cuaE4jZjzcTSvu" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="flex flex-row gap-2 h-[60px] mx-7 border-b border-b-[#dbdbdb] overflow-x-scroll whitespace-nowrap sticky top-[70px] bg-white z-10">
+                    <div className="flex flex-row gap-2 h-[70px] px-7 border-b border-b-[#dbdbdb] overflow-x-scroll whitespace-nowrap sticky top-[70px] bg-white z-10">
                         <TabMenu path="main" text="Materi Utama" />
                         <TabMenu path="other" text="Materi Lainnya" />
                         <TabMenu path="task" text="Tugas" />
@@ -40,7 +40,9 @@ export default function ClassMaterial() {
                         <TabMenu path="complain" text="Keluhan" />
                         <TabMenu path="reviews" text="Ulasan" />
                     </div>
-                    <Outlet />
+                    <div className="bg-white">
+                        <Outlet />
+                    </div>
                 </div>
             </div>
             <div className="flex flex-col w-1/4">
