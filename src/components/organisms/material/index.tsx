@@ -31,7 +31,7 @@ export default function ClassMaterial() {
                     <iframe width="100%" height="400px" src="https://www.youtube.com/embed/1OiuLxkIIj0?si=Y7cuaE4jZjzcTSvu" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="flex flex-row gap-2 h-[60px] mx-7 border-b border-b-[#dbdbdb] overflow-x-scroll whitespace-nowrap">
+                    <div className="flex flex-row gap-2 h-[60px] mx-7 border-b border-b-[#dbdbdb] overflow-x-scroll whitespace-nowrap sticky top-[70px] bg-white z-10">
                         <TabMenu path="main" text="Materi Utama" />
                         <TabMenu path="other" text="Materi Lainnya" />
                         <TabMenu path="task" text="Tugas" />
