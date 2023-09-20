@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { NavLink } from "react-router-dom"
 import { ReactNode } from 'react'
-import { SidebarStateType } from "../../store";
+import { RootState } from "../../store";
 
 interface SidebarMenuProps {
     path: string;
@@ -10,7 +10,7 @@ interface SidebarMenuProps {
 }
 
 export default function SidebarMenu({ path, icon, text }: SidebarMenuProps) {
-    const isDesktopExpand = useSelector((state: SidebarStateType) => state.sidebar.desktop)
+    const isDesktopExpand = useSelector((state: RootState) => state.sidebar.desktop)
 
     return (
         <NavLink

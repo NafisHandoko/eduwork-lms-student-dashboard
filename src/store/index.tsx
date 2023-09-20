@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import sidebarReducer from './sidebarSlice'
 
-const sidebarStore = configureStore({
+const store = configureStore({
     reducer: {
         sidebar: sidebarReducer
     },
 })
 
-export type SidebarStateType = ReturnType<typeof sidebarStore.getState>
-export default sidebarStore
+export type RootState = ReturnType<typeof store.getState>
+export default store

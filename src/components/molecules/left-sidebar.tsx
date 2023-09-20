@@ -4,11 +4,11 @@ import SidebarMenu from '../atoms/sidebar-menu'
 import { HiArrowLeftOnRectangle, HiOutlineBookOpen, HiOutlineBriefcase, HiOutlineCalendarDays, HiOutlineGlobeAsiaAustralia, HiOutlineQuestionMarkCircle, HiOutlineTrophy, HiOutlineUser, HiXMark } from 'react-icons/hi2'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleSidebar } from '../../store/sidebarSlice'
-import { SidebarStateType } from '../../store'
+import { RootState } from '../../store'
 
 export default function LeftSidebar() {
-    const isDesktopExpand = useSelector((state: SidebarStateType) => state.sidebar.desktop)
-    const isMobileExpand = useSelector((state: SidebarStateType) => state.sidebar.mobile)
+    const isDesktopExpand = useSelector((state: RootState) => state.sidebar.desktop)
+    const isMobileExpand = useSelector((state: RootState) => state.sidebar.mobile)
     const dispatch = useDispatch()
 
     return (
