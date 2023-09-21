@@ -1,6 +1,6 @@
 import { HiMagnifyingGlass, HiOutlineChatBubbleLeftEllipsis } from "react-icons/hi2";
 import Input from "../../atoms/input";
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 function ForumCard() {
     const dummyPhoto = 'https://source.unsplash.com/random/?person'
@@ -48,12 +48,12 @@ export default function Forum() {
                         placeholder="Search Forum Diskusi"
                         prefixIcon={<HiMagnifyingGlass className="text-neutral-60" />}
                         value={serachForum}
-                        onChange={(e: any) => setSearchForum(e.target.value)}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchForum(e.target.value)}
                     />
                     <Input
                         placeholder="Pilih Materi"
                         value={selectMaterial}
-                        onChange={(e: any) => setSelectMaterial(e.target.value)}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => setSelectMaterial(e.target.value)}
                     />
                 </div>
                 <div className="flex flex-col gap-5">

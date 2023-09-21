@@ -1,10 +1,17 @@
 import { HiPlus, HiStar, HiXMark } from "react-icons/hi2"
-import { useState } from 'react'
+import { useState, Dispatch, SetStateAction, MouseEventHandler } from 'react'
 import Button from "../../atoms/button"
 import Dropdown from "../../atoms/dropdown"
 
-function ReviewModal({ modalDismissed, setModalDismissed, onConfirm = () => { } }: any) {
+interface ReviewModalProps {
+    modalDismissed: boolean;
+    setModalDismissed: Dispatch<SetStateAction<boolean>>;
+    onConfirm?: MouseEventHandler
+}
+
+function ReviewModal({ modalDismissed, setModalDismissed, onConfirm = () => { } }: ReviewModalProps) {
     const [kritikSaran, setKritikSaran] = useState('')
+
     return (
         <div className={`fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 ${modalDismissed ? 'hidden' : ''}`}>
             <div className="bg-white rounded-lg flex flex-col w-full md:w-1/3">
@@ -71,17 +78,9 @@ function ReviewCard() {
     )
 }
 
-function ReviewBtnChild() {
-    return (
-        <>
-            <span>Tambah Ulasan</span>
-            <HiPlus />
-        </>
-    )
-}
-
 export default function Reviews() {
-    const [modalDismissed, setModalDismissed] = useState(true)
+    const [modalDismissed, setModalDismissed] = useState<boolean>(true)
+
     return (
         <div className="px-7 flex flex-col gap-5 items-start">
             <div className="flex flex-row gap-2 justify-between w-full">

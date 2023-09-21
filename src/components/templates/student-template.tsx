@@ -1,7 +1,16 @@
 import LeftSidebar from '../molecules/left-sidebar'
 import Topbar from '../molecules/topbar'
+import { ReactNode } from 'react'
 
-const Default = function ({ children, title }: any) {
+interface StudentTemplateDefaultProps {
+    children?: ReactNode;
+    title?: string;
+}
+interface StudentTemplateClassChapterProps {
+    children?: ReactNode;
+}
+
+const Default = function ({ children, title }: StudentTemplateDefaultProps) {
     return (
         <div className="flex flex-row items-stretch max-h-screen w-full">
             {/* left-sidebar */}
@@ -10,10 +19,10 @@ const Default = function ({ children, title }: any) {
             {/* main content */}
             <div className="w-full overflow-y-scroll">
                 {/* topbar */}
-                <Topbar.Default title={title} className="fixed w-full z-10" />
+                <Topbar.Default title={title} className="sticky top-0 w-full z-10" />
 
                 {/* main content */}
-                <div className='mt-16'>
+                <div>
                     {children}
                 </div>
             </div>
@@ -21,7 +30,7 @@ const Default = function ({ children, title }: any) {
     )
 }
 
-const ClassChapter = function ({ children }: any) {
+const ClassChapter = function ({ children }: StudentTemplateClassChapterProps) {
     return (
         <div className="flex flex-row items-stretch max-h-screen w-full">
             {/* left-sidebar */}
@@ -30,10 +39,10 @@ const ClassChapter = function ({ children }: any) {
             {/* main content */}
             <div className="w-full overflow-y-scroll">
                 {/* topbar */}
-                <Topbar.ClassChapter className="fixed w-full z-10" />
+                <Topbar.ClassChapter className="sticky top-0 w-full z-10" />
 
                 {/* main content */}
-                <div className='mt-[70px]'>
+                <div>
                     {children}
                 </div>
             </div>
