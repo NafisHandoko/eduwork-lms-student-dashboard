@@ -1,10 +1,16 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import Button from "../../atoms/button";
 import TabMenu from "../../atoms/tab-menu";
 import ClassSection from "../class-section";
 import Alert from "../../molecules/alert";
+import { RootState } from "../../../store";
+import { useSelector } from "react-redux";
 
 export default function ClassMaterial() {
+    const { classId } = useParams()
+    const classData = useSelector((state: RootState) => state.classState.class)
+    let activeClass = classData.filter((kelas: any) => kelas.id == classId)
+
     return (
         <div className="flex flex-row items-stretch">
             <div className="flex flex-col w-full md:w-3/4 min-h-screen">

@@ -10,7 +10,7 @@ interface SidebarMenuProps {
 }
 
 export default function SidebarMenu({ path, icon, text }: SidebarMenuProps) {
-    const isDesktopExpand = useSelector((state: RootState) => state.sidebar.desktop)
+    const isDesktopExpand = useSelector((state: RootState) => state.sidebarState.desktop)
 
     return (
         <NavLink

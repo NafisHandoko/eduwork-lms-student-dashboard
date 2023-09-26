@@ -16,6 +16,7 @@ import Mentor from './components/organisms/material/mentor'
 import Splash from './components/organisms/splash'
 import Reviews from './components/organisms/material/reviews'
 import Error404 from './pages/error-404'
+import AuthTest from './pages/auth-test'
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="my-class" />} />
         <Route path="my-class" element={<MyClass />} />
-        <Route path="my-class/:id" element={<ClassChapter />}>
+        <Route path="my-class/:classId" element={<ClassChapter />}>
           <Route path="material" element={<ClassMaterial />}>
             <Route path="main" element={<MainMaterial />} />
             <Route path="other" element={<OtherMaterial />} />
@@ -38,6 +39,7 @@ function App() {
         </Route>
         <Route path="splash" element={<Splash />} />
         <Route path="error404" element={<Error404 />} />
+        <Route path="auth-test" element={<AuthTest />} />
         <Route
           path="*"
           element={<Navigate to="error404" />}

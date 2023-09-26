@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const sidebarSlice = createSlice({
-    name: 'sidebar',
+    name: 'sidebarState',
     initialState: {
         desktop: true,
         mobile: false
