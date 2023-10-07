@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useState } from "react"
 import { HiCheck, HiChevronDown, HiChevronUp, HiOutlineExclamationCircle, HiOutlineLockClosed, HiXMark } from "react-icons/hi2"
 
 interface CollapseChildProps {

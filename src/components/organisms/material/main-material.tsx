@@ -3,16 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../store";
 
 export default function MainMaterial() {
-    // const { classId } = useParams()
     const activeClass: any = useSelector((state: RootState) => state.classState.activeClass)
-    // let activeClass: any = classData.filter((kelas: any) => kelas.id == classId)[0]
-    // const [activeClass, setActiveClass] = useState<any>()
-
-    // useEffect(() => {
-    //     setActiveClass(classData.filter((kelas: any) => kelas.id == classId)[0])
-    // }, [classData])
-
-    // const activeClass: any = useMemo(() => classData.filter((kelas: any) => kelas.id == classId)[0], [classData])
 
     return (
         <div className="flex flex-col px-7 gap-7">

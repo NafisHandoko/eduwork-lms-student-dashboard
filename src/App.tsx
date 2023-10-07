@@ -23,7 +23,8 @@ import { useEffect } from 'react'
 import { setClassState } from './store/classSlice'
 
 function App() {
-  const { isLoading, isError, error, data: fetchedClassData } = useGetAllClassesQuery()
+  // const { isLoading, isError, error, data: fetchedClassData } = useGetAllClassesQuery()
+  const { data: fetchedClassData } = useGetAllClassesQuery()
   const dispatch = useDispatch();
 
   useEffect(() => {

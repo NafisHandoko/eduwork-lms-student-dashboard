@@ -5,22 +5,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 
 export default function MyClass() {
-    // const { isLoading, isError, error, data: fetchedClassData } = useGetAllClassesQuery()
-    // const dispatch = useDispatch();
     const classData = useSelector((state: RootState) => state.classState.class)
-    // const [classData, setClassData] = useState([])
-
-    // useEffect(() => {
-    //     if (fetchedClassData) {
-    //         dispatch(setClassState(fetchedClassData.data.class));
-    //     }
-    // }, [fetchedClassData, dispatch]);
-
-    // useEffect(() => {
-    //     if(fetchedClassData){
-    //         setClassData(fetchedClassData.data.class)
-    //     }
-    // }, [fetchedClassData])
 
     return (
         <StudentTemplate.Default title="My Class">

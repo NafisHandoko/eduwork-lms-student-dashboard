@@ -4,7 +4,8 @@ import { useGetClassesCurriculumQuery } from "../../api/classApi";
 
 export default function ClassSection() {
     const { classId } = useParams()
-    const { isLoading, isError, error, data: fetchedClassesCurriculumData } = useGetClassesCurriculumQuery(classId)
+    // const { isLoading, isError, error, data: fetchedClassesCurriculumData } = useGetClassesCurriculumQuery(classId)
+    const { data: fetchedClassesCurriculumData } = useGetClassesCurriculumQuery(classId)
 
     return (
         <>
