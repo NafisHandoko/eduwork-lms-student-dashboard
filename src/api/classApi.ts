@@ -12,10 +12,13 @@ export const classApi = createApi({
     endpoints: (builder) => ({
         getAllClasses: builder.query<any, void>({
             query: () => `all`
-        })
+        }),
+        getClassesCurriculum: builder.query({
+            query: (classId) => `curriculum_using_class?class_id=${classId}`
+        }),
     })
 })
 
 export const {
-    useGetAllClassesQuery
+    useGetAllClassesQuery, useGetClassesCurriculumQuery
 } = classApi

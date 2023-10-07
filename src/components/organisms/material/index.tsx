@@ -7,9 +7,10 @@ import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
 
 export default function ClassMaterial() {
-    const { classId } = useParams()
-    const classData = useSelector((state: RootState) => state.classState.class)
-    let activeClass = classData.filter((kelas: any) => kelas.id == classId)
+    // const { classId } = useParams()
+    // const classData = useSelector((state: RootState) => state.classState.class)
+    // let activeClass = classData.filter((kelas: any) => kelas.id == classId)
+    const activeClass: any = useSelector((state: RootState) => state.classState.activeClass)
 
     return (
         <div className="flex flex-row items-stretch">

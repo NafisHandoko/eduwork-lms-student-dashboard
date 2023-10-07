@@ -5,12 +5,12 @@ export default function AuthTest() {
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "kH9uzGrt0cOqmZEutZCbjpssKfsXohH9QRd44yUFJr9iiKQjvAETPbkbev6AKkvr");
 
-        fetch("https://lmsapistudent.edudev.xyz/class/306", {
+        fetch("https://lmsapistudent.edudev.xyz/class/all", {
             method: 'GET',
             headers: myHeaders,
             redirect: 'follow'
         })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
     }
@@ -27,7 +27,7 @@ export default function AuthTest() {
 
     return (
         <div className="w-full h-screen flex items-center justify-center">
-            <button onClick={handleRequest2} className="px-5 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white">Request Data</button>
+            <button onClick={handleRequest} className="px-5 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white">Request Data</button>
         </div>
     )
 }

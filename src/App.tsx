@@ -17,8 +17,21 @@ import Splash from './components/organisms/splash'
 import Reviews from './components/organisms/material/reviews'
 import Error404 from './pages/error-404'
 import AuthTest from './pages/auth-test'
+import { useGetAllClassesQuery } from './api/classApi'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { setClassState } from './store/classSlice'
 
 function App() {
+  const { isLoading, isError, error, data: fetchedClassData } = useGetAllClassesQuery()
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (fetchedClassData) {
+      dispatch(setClassState(fetchedClassData.data.class));
+    }
+  }, [fetchedClassData, dispatch]);
+
   return (
     <>
       <Splash />

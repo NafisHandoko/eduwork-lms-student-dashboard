@@ -1,22 +1,26 @@
 import StudentTemplate from '../components/templates/student-template'
 import MyClassActionPanel from '../components/molecules/my-class/action-panel'
 import Card from '../components/molecules/card';
-import { useGetAllClassesQuery } from '../api/classApi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { useEffect } from 'react';
-import { setClassState } from '../store/classSlice';
 
 export default function MyClass() {
-    const { isLoading, isError, error, data: fetchedClassData } = useGetAllClassesQuery()
-    const dispatch = useDispatch();
+    // const { isLoading, isError, error, data: fetchedClassData } = useGetAllClassesQuery()
+    // const dispatch = useDispatch();
     const classData = useSelector((state: RootState) => state.classState.class)
+    // const [classData, setClassData] = useState([])
 
-    useEffect(() => {
-        if (fetchedClassData) {
-            dispatch(setClassState(fetchedClassData.data.class));
-        }
-    }, [fetchedClassData, dispatch]);
+    // useEffect(() => {
+    //     if (fetchedClassData) {
+    //         dispatch(setClassState(fetchedClassData.data.class));
+    //     }
+    // }, [fetchedClassData, dispatch]);
+
+    // useEffect(() => {
+    //     if(fetchedClassData){
+    //         setClassData(fetchedClassData.data.class)
+    //     }
+    // }, [fetchedClassData])
 
     return (
         <StudentTemplate.Default title="My Class">
