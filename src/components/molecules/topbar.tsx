@@ -35,7 +35,7 @@ const ClassChapter = function ({ className }: TopbarClassChapterProps) {
                 <option value="1">Kelas UI/UX Design</option>
             </Dropdown>
             <div className="flex flex-row h-full gap-2">
-                <TabMenu path="material" text="Material" />
+                <TabMenu path="material/main" text="Material" />
                 <TabMenu path="all-task" text="All Task" />
             </div>
             <HiOutlineBell className={`ml-auto text-xl`} />
