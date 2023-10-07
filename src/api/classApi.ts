@@ -16,9 +16,18 @@ export const classApi = createApi({
         getClassesCurriculum: builder.query({
             query: (classId) => `curriculum_using_class?class_id=${classId}`
         }),
+        getRegistrantsTask: builder.query({
+            query: ({ registrantId, status }) => `task_using_registrant?registrant_id=${registrantId}&status=${status}`
+        }),
+        getRegistrantsProgress: builder.query({
+            query: ({ registrantId, status }) => `progress_using_registrant?registrant_id=${registrantId}&status=${status}`
+        }),
+        getCurriculumsAdditionalMaterial: builder.query({
+            query: (curriculumId) => `additional_material?curriculum_id=${curriculumId}`
+        }),
     })
 })
 
 export const {
-    useGetAllClassesQuery, useGetClassesCurriculumQuery
+    useGetAllClassesQuery, useGetClassesCurriculumQuery, useGetRegistrantsTaskQuery, useGetRegistrantsProgressQuery, useGetCurriculumsAdditionalMaterialQuery
 } = classApi
