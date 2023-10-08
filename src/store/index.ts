@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import sidebarReducer from './sidebarSlice'
 import classReducer from './classSlice'
+import collapseReducer from './collapseSlice'
 import { classApi } from '../api/classApi'
 
 const store = configureStore({
     reducer: {
         [classApi.reducerPath]: classApi.reducer,
         sidebarState: sidebarReducer,
-        classState: classReducer
+        classState: classReducer,
+        collapseState: collapseReducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({}).concat([

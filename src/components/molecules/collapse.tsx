@@ -1,5 +1,7 @@
-import { useState } from "react"
 import { HiCheck, HiChevronDown, HiChevronUp, HiOutlineExclamationCircle, HiOutlineLockClosed, HiXMark } from "react-icons/hi2"
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveCollapse } from "../../store/collapseSlice";
+import { RootState } from "../../store";
 
 interface CollapseChildProps {
     status: 'finished' | 'ongoing' | 'locked';
@@ -26,11 +28,12 @@ function CollapseChild({ status, curriculumData }: CollapseChildProps) {
 }
 
 export default function Collapse({ status, categoryData, curriculumData }: CollapseProps) {
-    const [isCollapsed, setIsCollapsed] = useState(true)
+    const dispatch = useDispatch()
+    const activeCollapse = useSelector((state: RootState) => state.collapseState.activeCollapse)
 
     return (
         <div className="flex flex-col">
-            <button onClick={() => setIsCollapsed(!isCollapsed)} className="flex flex-row items-center bg-primary-surface border border-neutral-40 p-3 sticky top-[130px]">
+            <button onClick={() => dispatch(setActiveCollapse(categoryData.id))} className={`flex flex-row items-center bg-primary-surface border border-neutral-40 p-3`}>
                 {status == 'finished' ?
                     <HiCheck /> : status == 'ongoing' ?
                         <div className="bg-[#E0D700] rounded-lg p-1"><HiOutlineExclamationCircle /></div> : status == 'locked' ?
@@ -38,11 +41,11 @@ export default function Collapse({ status, categoryData, curriculumData }: Colla
                 }
                 <div className="flex flex-col gap-1 ml-3 mr-auto items-start">
                     <h3 className="font-bold">{categoryData.title}</h3>
-                    <span className="text-xs">0/4 | 28 menit</span>
+                    <span className="text-xs">0/{curriculumData.length} | 28 menit</span>
                 </div>
-                {isCollapsed ? <HiChevronDown /> : <HiChevronUp />}
+                {activeCollapse != categoryData.id ? <HiChevronDown /> : <HiChevronUp />}
             </button>
-            <div className={`flex flex-col transition-all duration-500 overflow-y-hidden ${isCollapsed ? 'max-h-[0]' : 'max-h-[1000px]'}`}>
+            <div className={`flex flex-col transition-all duration-500 overflow-y-hidden ${activeCollapse != categoryData.id ? 'max-h-[0]' : 'max-h-[1000px]'}`}>
                 {curriculumData && curriculumData.map((curriculum) => (
                     <CollapseChild status="finished" key={curriculum.id} curriculumData={curriculum} />
                 ))}
