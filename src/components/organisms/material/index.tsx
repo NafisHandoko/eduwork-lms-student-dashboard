@@ -5,6 +5,8 @@ import ClassSection from "../class-section";
 import Alert from "../../molecules/alert";
 
 export default function ClassMaterial() {
+    // const activeClass: any = useSelector((state: RootState) => state.classState.activeClass)
+
     return (
         <div className="flex flex-row items-stretch">
             <div className="flex flex-col w-full md:w-3/4 min-h-screen">

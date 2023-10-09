@@ -7,8 +7,8 @@ import { toggleSidebar } from '../../store/sidebarSlice'
 import { RootState } from '../../store'
 
 export default function LeftSidebar() {
-    const isDesktopExpand = useSelector((state: RootState) => state.sidebar.desktop)
-    const isMobileExpand = useSelector((state: RootState) => state.sidebar.mobile)
+    const isDesktopExpand = useSelector((state: RootState) => state.sidebarState.desktop)
+    const isMobileExpand = useSelector((state: RootState) => state.sidebarState.mobile)
     const dispatch = useDispatch()
 
     return (

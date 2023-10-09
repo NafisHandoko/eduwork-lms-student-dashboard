@@ -7,7 +7,7 @@ import { HiBolt, HiOutlineTrash, HiStar } from "react-icons/hi2";
 import { MouseEvent, useState } from 'react'
 import Modal from './modal';
 
-function MyClass() {
+function MyClass({ classData }: any) {
     const progressClass = 38
     const [modalDismissed, setModalDismissed] = useState<boolean>(true)
 
@@ -19,11 +19,11 @@ function MyClass() {
 
     return (
         <>
-            <Link to="1/material/main" className='flex flex-col rounded-lg bg-white max-w-1/3 rounded-lg transition-all hover:shadow-2xl'>
+            <Link to={`${classData.id}/material/main`} className='flex flex-col rounded-lg bg-white max-w-1/3 rounded-lg transition-all hover:shadow-2xl'>
                 {/* <img src={MyClassDummyImg} alt="" className='object-cover rounded-lg' /> */}
                 <div className={`h-48 bg-cover bg-center rounded-lg`} style={{ backgroundImage: `url(${MyClassDummyImg})` }}></div>
                 <div className='flex flex-col gap-2 p-6'>
-                    <h2 className='font-medium'>Intro to UI/UX Designer</h2>
+                    <h2 className='font-medium'>{classData.title}</h2>
                     <div className='flex flex-row items-center justify-between gap-3'>
                         <span className='text-sm font-medium'>Aria Dwitolio</span>
                         <div className='flex flex-row gap-2'>
