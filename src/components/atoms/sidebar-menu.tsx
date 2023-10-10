@@ -20,7 +20,7 @@ export default function SidebarMenu({ path, icon, text }: SidebarMenuProps) {
             }
         >
             {icon}
-            {isDesktopExpand ? <span>{text}</span> : null}
+            <span className={`${isDesktopExpand ? 'w-full': 'hidden w-0'}  text-xs`}>{text}</span>
         </NavLink>
     )
 }

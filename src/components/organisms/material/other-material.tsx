@@ -1,34 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import Card from "../../molecules/card";
+import Card, { OtherMaterialLoading } from "../../molecules/card";
 import Dropdown from "../../atoms/dropdown";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "@/src/store";
+import { fetchOtherMaterialApi } from "@/src/api/classApi";
+import { useParams } from "react-router-dom";
+import { classActiveCurriculum, classLoading, classOtherMaterialAll } from "@/src/store/classSlice";
+import { createId } from "@/src/utils/helper";
 
 export function OtherMaterial() {
+    const dispatch: AppDispatch = useDispatch();
+    const {classId} = useParams()
+    const loading = useSelector(classLoading).includes("fetch_other_material")
+    const activeCurriculum = useSelector(classActiveCurriculum)
     const [search, setSearch] = useState('')
-    const dummyCards = [
-        {
-            id: 1
-        },
-        {
-            id: 2
-        },
-        {
-            id: 3
-        },
-        {
-            id: 4
-        },
-        {
-            id: 5
-        },
-    ]
-    const otherMaterialCards = dummyCards
+    const otherMaterialCards = useSelector(classOtherMaterialAll)
+
+    useEffect(() => {
+        if (activeCurriculum) {
+            dispatch(fetchOtherMaterialApi({
+                payload: {
+                    class_id: classId as unknown as number,
+                    curriculum_id: activeCurriculum as unknown as number ?? 0
+                }
+            }))
+        }
+    }, [activeCurriculum])
+
     return (
         <div className="flex flex-col px-7 gap-10">
             <div className="flex flex-col gap-5">
                 <div className="flex flex-row items-center justify-between gap-2">
-                    <h1 className="font-bold text-2xl">Referensi Video Materi Lainya.. </h1>
-                    <div className="flex flex-row gap-3 items-stretch">
+                    <h1 className="font-bold text-lg">Referensi Video Materi Lainya.. </h1>
+                    <div className="flex flex-row gap-3 items-stretch text-[0.8rem]">
                         <Dropdown>
                             <option value="0">Rating</option>
                             <option value="1">1</option>
@@ -57,7 +62,7 @@ export function OtherMaterial() {
                         onChange={(e) => setSearch(e.target.value)}
                         type="text"
                         id="simple-search"
-                        className="bg-white shadow-lg text-sm rounded-xl block w-full px-14 md:px-5 p-4 placeholder-neutral-60"
+                        className="bg-white shadow-lg text-sm rounded-xl block w-full p-4 placeholder-neutral-60"
                         placeholder="Ketik judul materi yang ingin kamu cari.. "
                     />
                     <button type='submit' className="flex absolute inset-y-0 right-0 items-center pr-5 cursor-pointer">
@@ -68,9 +73,18 @@ export function OtherMaterial() {
             </div>
             <div className='grid grid-cols-3 gap-3'>
                 {/* card */}
-                {(otherMaterialCards && otherMaterialCards.length > 0) && otherMaterialCards.map((material) => (
-                    <Card.OtherMaterial2 key={material.id} />
-                ))}
+                {
+                    loading &&
+                    createId(6).map(item => (
+                        <OtherMaterialLoading  key={item.id}/>
+                    ))
+                }
+                {
+                    !loading &&
+                    (otherMaterialCards && otherMaterialCards.length > 0) && otherMaterialCards.map((material) => (
+                        <Card.OtherMaterial2 key={material.id} material={material} />
+                    ))
+                }
             </div>
         </div>
     )
