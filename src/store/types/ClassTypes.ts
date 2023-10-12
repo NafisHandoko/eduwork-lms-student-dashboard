@@ -137,12 +137,27 @@ export type ReviewCurriculumType = {
   student: UserType
 }
 
+export type ClassTaskType = {
+  created_at: string | null;
+  curriculum_id: number | null;
+  deadline: number | null;
+  deadline_hour: number | null;
+  description?: string | null;
+  id: number;
+  required: string | null;
+  sort: number | null;
+  status: string | null;
+  title: string | null;
+  updated_at: string | null;
+}
+
 export interface ClassStateInterface {
   class: Array<ClassType>,
   curriculum: Array<CurriculumType>,
   category: Array<CategoryType>,
   otherMaterial: Array<OtherMaterialType>
   reviewCurriculum: Array<ReviewCurriculumType>
+  task: Array<ClassTaskType>
   loads: Array<string>,
   activeClass: {},
   activeCurriculum: null | number

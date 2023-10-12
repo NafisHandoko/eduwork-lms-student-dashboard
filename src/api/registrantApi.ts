@@ -20,3 +20,23 @@ export const fetchRegistrantProgressApi = createAsyncThunk("services/registrant/
     
   }
 })
+
+type SubmitTaskApiPayload = {
+  payload: {
+    task_id: number,
+    answer: string,
+    registrant_id: number
+  }
+}
+
+export const submitTaskApi = createAsyncThunk("services/submit_task", async(_: SubmitTaskApiPayload, {dispatch}) => {
+  try {
+    dispatch(registrantActions.addLoad("submit_task"))
+    const resp = await axios.post("/class/submit_task", _.payload)
+    const data = await resp.data
+    dispatch(registrantActions.removeLoad("submit_task"))
+    console.log(data)
+  } catch (error) {
+    dispatch(registrantActions.removeLoad("submit_task"))
+  }
+})

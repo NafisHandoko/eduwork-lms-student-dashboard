@@ -42,6 +42,7 @@ export const fetchCurriculumApi = createAsyncThunk("services/curriculum_api", as
     const data = await resp.data
     dispatch(classActions.setCategories(data.data.categories))
     dispatch(classActions.setCurriculums(data.data.curriculums))
+    dispatch(classActions.setTasks(data.data.tasks))
     dispatch(classActions.removeLoad("fetch_curriculum"))
     return data
   } catch (error) {

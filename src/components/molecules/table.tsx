@@ -31,7 +31,7 @@ export function TRow({ children }: TRowProps) {
 export function THeader({ children }: THeaderProps) {
     return (
         <thead className="table-header-group text-text-paragraph">
-            <tr className="table-row bg-[#F8F8F8] border-y border-neutral-40">{children}</tr>
+            <tr className="table-row bg-[#F8F8F8] border-y border-neutral-40 text-center">{children}</tr>
         </thead>
     )
 }

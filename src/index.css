@@ -149,7 +149,7 @@ button:focus-visible {
     @apply w-full text-xs
   }
   table > thead {
-    @apply bg-blue-50 text-xs
+    @apply bg-blue-50 text-xs text-center
   }
   table > thead > tr > td {
     @apply p-2 text-center

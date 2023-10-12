@@ -104,7 +104,7 @@ export default function ClassSection() {
                 {
                     !loading &&
                     categories.map(category => (
-                        <Collapse status="finished" key={category.id} categoryData={category} />
+                        <Collapse key={category.id} categoryData={category} />
                     ))
                 }
             </div>
