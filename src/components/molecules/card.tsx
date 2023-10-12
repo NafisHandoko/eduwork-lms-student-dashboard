@@ -164,14 +164,13 @@ function OtherMaterial2({material}:{material: OtherMaterialType}) {
 
     return (
         <div className='rounded bg-cover bg-center w-full aspect-square relative'>
-            {
-                material.content &&
-                <iframe src={material.content} className='w-full h-full absolute top-0 left-0 z-10 rounded'></iframe>
-            }
             <div className='bg-gradient-to-t from-black to-transparent w-full h-full rounded'>
-                <div className='flex flex-col justify-end gap-2 text-white h-full w-full'>
-                    {/* <span className='font-black text-sm'>Mobile User Interface Design</span> */}
-                    <div className='flex flex-row items-center gap-2 z-20 p-4 bg-slate-600 rounded-b'>
+                <div className='flex flex-col justify-end text-white h-full w-full'>
+                    {
+                        material.content &&
+                        <div className='top-0 left-0 z-10 w-full h-full'><iframe src={material.content} className='w-full h-full rounded' allowFullScreen></iframe></div>
+                    }
+                    <div className='flex flex-row items-center gap-2 z-20 px-4 py-2 bg-slate-600 rounded-b'>
                         <img src={profilePhoto(material.mentor)} alt="" className="w-12 h-12 object-cover rounded-full" />
                         <div className='flex flex-col'>
                             <span className='font-semibold text-xs'>{material.mentor.name}</span>
@@ -182,7 +181,7 @@ function OtherMaterial2({material}:{material: OtherMaterialType}) {
                                     <span className='font-medium text-[6px] text-text-paragraph text-white'>{material.mentor.working_on}</span>
                                 </div>
                             </div>
-                            <div className='flex flex-row gap-1 items-center'>
+                            {/* <div className='flex flex-row gap-1 items-center'>
                                 <div className='flex flex-row items-center text-xs'>
                                     <HiStar className="text-secondary-main" />
                                     <HiStar className="text-secondary-main" />
@@ -191,7 +190,7 @@ function OtherMaterial2({material}:{material: OtherMaterialType}) {
                                     <HiStar className="text-white" />
                                 </div>
                                 <span className='text-[8px] font-medium mt-1'>4.0</span>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

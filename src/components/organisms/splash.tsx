@@ -3,14 +3,14 @@ import SplashImg from '../../assets/splash.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginApi } from '@/src/api/authApi';
 import { AppDispatch } from '@/src/store';
-import { getLoading } from '@/src/store/initSlice';
+import { getLoading, getTotal } from '@/src/store/initSlice';
 import { fetchClassApi } from '@/src/api/classApi';
 
 export default function Splash() {
     const [displayPercent,setDisplayPercent] = useState(0)
     const dispatch: AppDispatch = useDispatch()
     const loads = useSelector(getLoading)
-    const total = loads.length
+    const total = useSelector(getTotal)
     const percentageUnfixed = (((total-(loads.length)) / total) * 100)
     const percentage: number = Number(percentageUnfixed > 0 && percentageUnfixed < 100 ? percentageUnfixed.toFixed(1): percentageUnfixed)
 
@@ -21,7 +21,7 @@ export default function Splash() {
         if (currentPercentage > percentage) {
           clearInterval(interval);
         }
-        setDisplayPercent((currentPercentage > 100 || total == 0) ? 100: currentPercentage);
+        setDisplayPercent((currentPercentage >= 100 || total == 0) ? 100: currentPercentage);
       }, 200 / percentage);
   
       return () => clearInterval(interval);
@@ -31,9 +31,11 @@ export default function Splash() {
       dispatch(LoginApi({
         payload: {}
       })).then((res) => {
-        dispatch(fetchClassApi({
-          payload: {}
-        }))
+        setTimeout(() => {
+          dispatch(fetchClassApi({
+            payload: {}
+          }))
+        }, 200)
       })
     }, [])
 
@@ -44,9 +46,9 @@ export default function Splash() {
           <div className='font-bold text-2xl text-gray-700'>Please Wait</div>
           <div className='text-lg text-gray-500'>We’ve loaded {displayPercent}% of your data</div>
         </div>
-        <div className='w-[80%] mx-auto'>
-          <div className='bg-gray-300 rounded-full h-4'></div>
-          <div className={`bg-primary rounded-full h-4 -mt-4 transition-width duration-200`} style={{width: `${percentage}%`}}></div>
+        <div className='w-[80%] mx-auto relative'>
+          <div className='bg-gray-300 rounded-full h-4 z-10'></div>
+          <div className={`bg-blue-600 rounded-full h-4 top-0 left-0 transition-width duration-200 z-20 absolute`} style={{width: `${displayPercent}%`}}></div>
         </div>
       </div>
     )

@@ -8,7 +8,8 @@ import { fetchCurriculumApi } from "@/src/api/classApi";
 import Skeleton from "../loader/skeleton";
 import { createId } from "@/src/utils/helper";
 import { setActiveCollapse } from "@/src/store/collapseSlice";
-import { getRegistrantLastProgress } from "@/src/store/registrantSlice";
+import { getRegistrantByClassId, getRegistrantLastProgress } from "@/src/store/registrantSlice";
+import { fetchRegistrantProgressApi } from "@/src/api/registrantApi";
 
 function ClassSectionLoading() {
     return (
@@ -53,6 +54,8 @@ export default function ClassSection() {
     const curriculumIdFromLastProgress = lastProgress?.curriculum_id
     const curriculum = useSelector((state: RootState) => classCurriculumById(state,lastProgress?.curriculum_id as unknown as number))
     const categoryId = curriculum?.curriculum_category_id
+    const registrant = useSelector((state: RootState) => getRegistrantByClassId(state, classId as unknown as number))
+    const registrantId = registrant?.id
 
     useEffect(() => {
         if (classId !== undefined) {
@@ -65,6 +68,16 @@ export default function ClassSection() {
             })
         }
     }, [classId])
+
+    useEffect(() => {
+        if (registrantId) {
+            dispatch(fetchRegistrantProgressApi({
+                payload: {
+                    registrant_id: registrantId
+                }
+            }))
+        }
+    }, [registrantId])
 
     useEffect(() => {
         if (curriculumIdFromLastProgress) {

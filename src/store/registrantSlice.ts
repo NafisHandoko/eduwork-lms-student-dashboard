@@ -46,10 +46,25 @@ export const getRegistrantLastProgress = (state: RootState) => {
   });
   return progress[0];
 };
+export const selectRegistrantProgressByCurriculumId = createSelector([getRegistrantProgressAll, (state: RootState, curriculum_id: number) => curriculum_id], (progress, curriculum_id) => {
+  return progress.find(item => item.curriculum_id == curriculum_id)
+})
 
 export const getRegistrantTaskAll = (state:RootState) => state.registrantState.task
 export const getRegistrantTaskUnresolved = createSelector([getRegistrantTaskAll], (tasks) => {
   return tasks.filter(item => item.status == 'progress')
+})
+export const selectRegistrantTaskAllByCurriculumId = createSelector([getRegistrantTaskAll, (state: RootState, curriculum_id) => curriculum_id], (tasks, curriculum_id) => {
+  return tasks.filter(item => item.curriculum_id == curriculum_id)
+})
+export const selectRegistrantTaskUnresolvedByCurriculumId = createSelector([getRegistrantTaskAll, (state: RootState, curriculum_id) => curriculum_id], (tasks, curriculum_id) => {
+  return (tasks.filter(item => item.status == 'progress' && item.curriculum_id == curriculum_id).length > 0)
+})
+export const selectRegistrantTaskResolvedByCurriculumId = createSelector([getRegistrantTaskAll, (state: RootState, curriculum_id) => curriculum_id], (tasks, curriculum_id) => {
+  return tasks.filter(item => (item.status == 'done') && item.curriculum_id == curriculum_id).length > 0
+})
+export const selectRegistrantTaskFinishedByCurriculumId = createSelector([getRegistrantTaskAll, (state: RootState, curriculum_id) => curriculum_id], (tasks, curriculum_id) => {
+  return tasks.filter(item => (item.status == 'finish') && item.curriculum_id == curriculum_id).length > 0
 })
 
 export default RegistrantSlice.reducer

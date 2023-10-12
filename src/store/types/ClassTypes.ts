@@ -123,11 +123,26 @@ export type OtherMaterialType = {
   mentor: UserType
 }
 
+export type ReviewCurriculumType = {
+  avg_rating: number | null;
+  class_id: number | null;
+  created_at: string | null;
+  curriculum_id: number | null;
+  id: number;
+  mentor_id: number | null;
+  rating: number | null;
+  saran: string | null;
+  student_id: number | null;
+  updated_at: string | null;
+  student: UserType
+}
+
 export interface ClassStateInterface {
   class: Array<ClassType>,
   curriculum: Array<CurriculumType>,
   category: Array<CategoryType>,
   otherMaterial: Array<OtherMaterialType>
+  reviewCurriculum: Array<ReviewCurriculumType>
   loads: Array<string>,
   activeClass: {},
   activeCurriculum: null | number

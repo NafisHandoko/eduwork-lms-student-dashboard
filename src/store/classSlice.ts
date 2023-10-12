@@ -8,6 +8,7 @@ const initialState: ClassStateInterface = {
     curriculum: [],
     category: [],
     otherMaterial: [],
+    reviewCurriculum: [],
     loads: [],
     activeClass: {},
     activeCurriculum: null
@@ -35,6 +36,9 @@ export const classSlice = createSlice({
         },
         setOtherMaterials: (state, {payload}) => {
             state.otherMaterial = payload
+        },
+        setReviewCurriculums: (state, {payload}) => {
+            state.reviewCurriculum = payload
         }
     }
 })
@@ -55,6 +59,9 @@ export const classCategoryAll = (state:RootState) => state.classState.category
 export const classCategoryByClassId = createSelector([classCategoryAll, (state:RootState, class_id: number) => class_id], (categories, class_id) => {
     return categories.filter(item => item.class_id == class_id).sort((a, b) => (a.sort || 0) - (b.sort || 0))
 })
+export const classCategoryById = createSelector([classCategoryAll, (state:RootState, id: number) => id], (categories, id) => {
+    return categories.find(item => item.id == id)
+})
 
 export const classCurriculumAll = (state:RootState) => state.classState.curriculum
 export const classCurriculumByCategoryId = createSelector([classCurriculumAll, (state:RootState, category_id: number) => category_id], (curriculums, category_id) => {
@@ -65,5 +72,7 @@ export const classCurriculumById = createSelector([classCurriculumAll, (state:Ro
 })
 
 export const classOtherMaterialAll = (state:RootState) => state.classState.otherMaterial
+
+export const classReviewCurriculumAll = (state:RootState) => state.classState.reviewCurriculum
 
 export default classSlice.reducer

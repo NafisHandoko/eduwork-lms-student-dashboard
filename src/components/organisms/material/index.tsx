@@ -61,7 +61,7 @@ export default function ClassMaterial() {
                         <TabMenu path="other" text="Materi Lainnya" />
                         {/* <TabMenu path="mentor" text="Kontak Mentor" /> */}
                         {/* <TabMenu path="forum" text="Forum" /> */}
-                        <TabMenu path="complain" text="Keluhan" />
+                        {/* <TabMenu path="complain" text="Keluhan" /> */}
                         <TabMenu path="reviews" text="Ulasan" />
                     </div>
                     <div className="bg-white">

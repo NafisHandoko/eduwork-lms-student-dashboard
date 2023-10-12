@@ -68,3 +68,23 @@ export const fetchOtherMaterialApi = createAsyncThunk("services/other_material",
     
   }
 })
+
+type ReviewCurriculumApiPayload = {
+  payload: {
+    curriculum_id: number
+  }
+}
+
+export const fetchReviewCurriculumApi = createAsyncThunk("services/review_curriculum", async(_: ReviewCurriculumApiPayload, {dispatch}) => {
+  try {
+    dispatch(classActions.addLoad("fetch_review_curriculum"))
+    const resp = await axios.get("/class/review_curriculum", {
+      params: _.payload
+    })
+    const data = await resp.data
+    dispatch(classActions.setReviewCurriculums(data.data))
+    dispatch(classActions.removeLoad("fetch_review_curriculum"))
+  } catch (error) {
+    
+  }
+})
