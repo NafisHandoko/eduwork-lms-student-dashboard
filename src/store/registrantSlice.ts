@@ -4,6 +4,7 @@ import BaseReducer from "../utils/base-reducer"
 import { RootState } from "."
 import { RegistrantInterface } from "./types/RegistrantTypes"
 import moment from "moment"
+import { classCategoryById, classCurriculumByCategoryId } from './classSlice';
 
 const initialState: RegistrantInterface = {
   registrant: [],
@@ -78,5 +79,17 @@ export const selectRegistrantTaskResolvedByCurriculumId = createSelector([getReg
 export const selectRegistrantTaskFinishedByCurriculumId = createSelector([getRegistrantTaskAll, (state: RootState, curriculum_id) => curriculum_id], (tasks, curriculum_id) => {
   return tasks.filter(item => (item.status == 'finish') && item.curriculum_id == curriculum_id).length > 0
 })
+
+export const selectRegistrantTaskAllByCategoryId = createSelector(
+  [getRegistrantTaskAll, (state: RootState, categoryId: number) => ({
+    category: classCategoryById(state,categoryId),
+    curriculums: classCurriculumByCategoryId(state, categoryId)
+  })],
+  (tasks, _) => {
+    const curriculumIds = _.curriculums.map(item => item.id)
+    return tasks.filter(item => curriculumIds.includes(item.curriculum_id as unknown as number))
+  }
+)
+
 
 export default RegistrantSlice.reducer
