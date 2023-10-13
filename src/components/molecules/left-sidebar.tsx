@@ -21,10 +21,11 @@ export default function LeftSidebar() {
                     <SidebarMenu path="/my-class" icon={<HiOutlineBookOpen className="flex-shrink-0" />} text="My Class" />
                     <SidebarMenu path="/events" icon={<HiOutlineCalendarDays className="flex-shrink-0" />} text="Events" />
                     <SidebarMenu path="/penyaluran" icon={<HiOutlineBriefcase className="flex-shrink-0" />} text="Penyaluran" />
-                    <SidebarMenu path="/community" icon={<HiOutlineGlobeAsiaAustralia className="flex-shrink-0" />} text="Community" />
-                    <SidebarMenu path="/account" icon={<HiOutlineUser className="flex-shrink-0" />} text="Account" />
-                    <SidebarMenu path="/apresiasi" icon={<HiOutlineTrophy className="flex-shrink-0" />} text="Apresiasi" />
+                    <SidebarMenu path="/forum" icon={<HiOutlineGlobeAsiaAustralia className="flex-shrink-0" />} text="Forum" />
+                    {/* <SidebarMenu path="/apresiasi" icon={<HiOutlineTrophy className="flex-shrink-0" />} text="Apresiasi" /> */}
                     <SidebarMenu path="/customer-support" icon={<HiOutlineQuestionMarkCircle className="flex-shrink-0" />} text="Customer Support" />
+                    <hr className='pb-2 mt-2' />
+                    <SidebarMenu path="/account" icon={<HiOutlineUser className="flex-shrink-0" />} text="Account" />
                     <SidebarMenu path="/logout" icon={<HiArrowLeftOnRectangle className="flex-shrink-0" />} text="Logout" />
                 </nav>
             </div>

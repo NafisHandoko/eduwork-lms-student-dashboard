@@ -7,7 +7,7 @@ import { CategoryType, CurriculumType } from "@/src/store/types/ClassTypes";
 import { classActions, classActiveCurriculum, classCategoryById, classCurriculumByCategoryId, classCurriculumById, classTaskByCurriculumId } from "@/src/store/classSlice";
 import Skeleton from "./skeleton";
 import { StatusType, useGetCurriculumStatus } from "@/src/store/hooks/class-hooks";
-import { selectRegistrantProgressByCurriculumId, selectRegistrantTaskAllByCurriculumId, selectRegistrantTaskFinishedByCurriculumId, selectRegistrantTaskResolvedByCurriculumId, selectRegistrantTaskUnresolvedByCurriculumId } from '@/src/store/registrantSlice';
+import { getRegistrantTaskAll, selectRegistrantProgressByCurriculumId, selectRegistrantTaskAllByCurriculumId, selectRegistrantTaskFinishedByCurriculumId, selectRegistrantTaskResolvedByCurriculumId, selectRegistrantTaskUnresolvedByCurriculumId } from '@/src/store/registrantSlice';
 
 
 interface CollapseChildProps {
@@ -31,7 +31,7 @@ function CollapseChild({ status, curriculumData }: CollapseChildProps) {
                   behavior: "smooth"
               });
             }
-        }} className={`flex flex-row items-center gap-3 px-3 py-2 border bg-white ${status == 'locked' ? '!bg-neutral-20 cursor-not-allowed' : ''} ${activeCurriculum == curriculumData.id ? '!bg-blue-100':''} cursor-pointer hover:bg-blue-100`} >
+        }} className={`flex flex-row items-center gap-3 px-3 py-2 border bg-white ${status == 'locked' ? '!bg-neutral-20 !cursor-not-allowed' : ''} ${activeCurriculum == curriculumData.id ? '!bg-blue-100':''} cursor-pointer hover:bg-blue-100`} >
             {
               status == 'finished' ? <div className="text-[#0C8048]"><HiCheck /></div>: 
                 (status == 'waiting' ? <div className="text-white rounded-lg bg-yellow-600 p-0.5"><HiOutlineClock /></div> : 
@@ -61,6 +61,8 @@ function CollapseItem({curriculum, onStatusChanged}: {curriculum: CurriculumType
   const currentTaskUnresolved = useSelector((state: RootState) => selectRegistrantTaskUnresolvedByCurriculumId(state, curriculum.id))
   const currentTaskResolved = useSelector((state: RootState) => selectRegistrantTaskResolvedByCurriculumId(state, curriculum.id))
   const currentTaskFinished = useSelector((state: RootState) => selectRegistrantTaskFinishedByCurriculumId(state, curriculum.id))
+
+  const studentTaskAll = useSelector(getRegistrantTaskAll)
 
   const [currentStatus, setCurrentStatus] = useState<StatusType>(null)
   
@@ -113,6 +115,8 @@ export default function Collapse({ categoryData }: CollapseProps) {
     const activeCollapse = useSelector((state: RootState) => state.collapseState.activeCollapse)
     const curriculumData = useSelector((state: RootState) => classCurriculumByCategoryId(state,categoryData.id))
     const [statusses,setStatusses] = useState<Array<StatusType>>([])
+    const studentTaskAll = useSelector(getRegistrantTaskAll)
+
     return (
         <div className="flex flex-col">
             <button onClick={() => {
@@ -130,7 +134,7 @@ export default function Collapse({ categoryData }: CollapseProps) {
                 {activeCollapse != categoryData.id ? <HiChevronDown /> : <HiChevronUp />}
             </button>
             <div className={`flex flex-col transition-all duration-500 overflow-y-hidden ${activeCollapse == categoryData.id ? 'max-h-[1000px]' : 'max-h-[0]'}`}>
-                {curriculumData.map((curriculum) => {
+                {curriculumData.map((curriculum: CurriculumType) => {
                     return <CollapseItem key={curriculum.id} curriculum={curriculum} onStatusChanged={(item: StatusType) => statusses.splice(0,0,item)} />
                 })}
             </div>

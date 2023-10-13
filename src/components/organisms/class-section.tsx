@@ -10,6 +10,7 @@ import { createId } from "@/src/utils/helper";
 import { setActiveCollapse } from "@/src/store/collapseSlice";
 import { getRegistrantByClassId, getRegistrantLastProgress } from "@/src/store/registrantSlice";
 import { fetchRegistrantProgressApi } from "@/src/api/registrantApi";
+import { CategoryType } from "@/src/store/types/ClassTypes";
 
 function ClassSectionLoading() {
     return (
@@ -103,7 +104,7 @@ export default function ClassSection() {
                 }
                 {
                     !loading &&
-                    categories.map(category => (
+                    categories.map((category: CategoryType) => (
                         <Collapse key={category.id} categoryData={category} />
                     ))
                 }

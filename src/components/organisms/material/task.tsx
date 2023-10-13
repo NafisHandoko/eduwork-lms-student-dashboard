@@ -10,6 +10,8 @@ import moment from "moment";
 import { createPortal } from "react-dom";
 import { TaskType } from "@/src/store/types/RegistrantTypes";
 import { classCategoryById, classCurriculumById } from "@/src/store/classSlice";
+import { toast } from "react-toastify";
+import Loader from "../../all/loader";
 
 interface ShowTaskModalProps {
     modalDismissed: boolean;
@@ -32,7 +34,15 @@ function ShowTaskModal({modalDismissed,setModalDismissed,onConfirm,task}: ShowTa
                 task_id: task.id,
                 registrant_id: task.registrant_id as unknown as number
             }
-        }))
+        })).then(resp => {
+            toast("Task Submitted.", {
+                type: 'success'
+            })
+        }).catch((err) => {
+            toast("Error Submit!", {
+                type: 'error'
+            })
+        })
     }
     
     return (
@@ -60,7 +70,13 @@ function ShowTaskModal({modalDismissed,setModalDismissed,onConfirm,task}: ShowTa
                 <div className="px-5 pb-3">
                     <textarea name="" id="" rows={5} className="w-full resize-none border rounded p-4" placeholder="Tulis Jawaban" onChange={(e) => setAnswer(e.target.value)} value={answer}></textarea>
                 </div>
-                <button className={`px-4 py-3 text-white rounded-b-lg ${submitLoading ? 'bg-gray-300': 'bg-blue-600 hover:bg-blue-700'}`} disabled={submitLoading} onClick={() => _handleSubmitTask()}>Submit</button>
+                <button className={`px-4 py-3 text-white rounded-b-lg ${submitLoading ? 'bg-gray-300': 'bg-blue-600 hover:bg-blue-700'}`} disabled={submitLoading} onClick={() => _handleSubmitTask()}>
+                    {
+                        submitLoading &&
+                        <Loader className="mr-2" />
+                    }
+                    Submit
+                </button>
             </div>
         </div>
     )
@@ -93,7 +109,7 @@ function TaskItem ({item}: {item: TaskType}) {
                 }
                 {
                     item.status == 'done' &&
-                    <div className="flex flex-row items-center justify-center gap-1 bg-[#FFE2E2] rounded-full px-3 py-1">
+                    <div className="flex flex-row items-center justify-center gap-1 bg-yellow-300 rounded-full px-3 py-1">
                         <HiOutlineInformationCircle />
                         <span className="whitespace-nowrap">Sedang Diperiksa</span>
                     </div>
@@ -106,7 +122,7 @@ function TaskItem ({item}: {item: TaskType}) {
                         <>
                             <div className="flex flex-row items-center justify-center gap-1 text-white bg-primary-main rounded-lg px-3 py-1 cursor-pointer" onClick={() => setModalDismissed(!modalDismissed)}>
                                 <HiOutlineEye />
-                                <span className="mr-2">lihat</span>
+                                <span className="mr-2">Submit</span>
                                 <HiChevronRight />
                                 
                             </div>
@@ -121,7 +137,7 @@ function TaskItem ({item}: {item: TaskType}) {
                     }
                     {
                         item.status == 'done' &&
-                        <div>Sedang Diperiksa</div>
+                        <div>Sudah Dikirim</div>
                     }
                 </>
             </TColumn>
@@ -203,7 +219,7 @@ export function TaskTable() {
                     </TColumn>
                 </TRow> */}
                 {
-                    unfinishedTasks.map(item => (
+                    unfinishedTasks.map((item: TaskType) => (
                         <TaskItem item={item} key={item.id} />
                     ))
                 }

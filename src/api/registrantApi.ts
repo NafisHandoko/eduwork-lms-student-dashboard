@@ -35,8 +35,9 @@ export const submitTaskApi = createAsyncThunk("services/submit_task", async(_: S
     const resp = await axios.post("/class/submit_task", _.payload)
     const data = await resp.data
     dispatch(registrantActions.removeLoad("submit_task"))
-    console.log(data)
+    return data
   } catch (error) {
     dispatch(registrantActions.removeLoad("submit_task"))
+    return error
   }
 })
