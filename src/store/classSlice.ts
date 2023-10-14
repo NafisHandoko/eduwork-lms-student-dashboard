@@ -4,7 +4,8 @@ export const classSlice = createSlice({
     name: 'classState',
     initialState: {
         class: [],
-        activeClass: {}
+        activeClass: {},
+        activeCurriculum: {}
     },
     reducers: {
         setClassState: (state, action) => {
@@ -13,8 +14,11 @@ export const classSlice = createSlice({
         setActiveClassState: (state, action) => {
             state.activeClass = action.payload
         },
+        setActiveCurriculumState: (state, action) => {
+            state.activeCurriculum = action.payload
+        },
     }
 })
 
-export const { setClassState, setActiveClassState } = classSlice.actions
+export const { setClassState, setActiveClassState, setActiveCurriculumState } = classSlice.actions
 export default classSlice.reducer

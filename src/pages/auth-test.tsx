@@ -5,7 +5,7 @@ export default function AuthTest() {
         var myHeaders = new Headers();
         myHeaders.append("Authorization", "kH9uzGrt0cOqmZEutZCbjpssKfsXohH9QRd44yUFJr9iiKQjvAETPbkbev6AKkvr");
 
-        fetch("https://lmsapistudent.edudev.xyz/class/all", {
+        fetch("https://lmsapistudent.edudev.xyz/class/additional_material?curriculum_id=11166", {
             method: 'GET',
             headers: myHeaders,
             redirect: 'follow'
