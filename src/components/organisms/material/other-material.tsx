@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import Card from "../../molecules/card";
 import Dropdown from "../../atoms/dropdown";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../store";
 
 export function OtherMaterial() {
     const [search, setSearch] = useState('')
@@ -25,14 +23,6 @@ export function OtherMaterial() {
         },
     ]
     const otherMaterialCards = dummyCards
-
-    const activeCurriculum: any = useSelector((state: RootState) => state.classState.activeCurriculum)
-    useEffect(() => {
-        if (activeCurriculum) {
-            console.log(activeCurriculum)
-        }
-    }, [activeCurriculum])
-
     return (
         <div className="flex flex-col px-7 gap-10">
             <div className="flex flex-col gap-5">

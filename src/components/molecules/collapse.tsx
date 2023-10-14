@@ -2,7 +2,6 @@ import { HiCheck, HiChevronDown, HiChevronUp, HiOutlineExclamationCircle, HiOutl
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveCollapse } from "../../store/collapseSlice";
 import { RootState } from "../../store";
-import { setActiveCurriculumState } from "../../store/classSlice";
 
 interface CollapseChildProps {
     status: 'finished' | 'ongoing' | 'locked';
@@ -15,17 +14,8 @@ interface CollapseProps {
 }
 
 function CollapseChild({ status, curriculumData }: CollapseChildProps) {
-    const activeCurriculum: any = useSelector((state: RootState) => state.classState.activeCurriculum)
-    const dispatch = useDispatch();
-
-    const handleActiveCurriculum = () => {
-        if (curriculumData) {
-            dispatch(setActiveCurriculumState(curriculumData))
-        }
-    }
-
     return (
-        <button onClick={handleActiveCurriculum} className={`hover:bg-primary-surface flex flex-row items-center gap-3 px-3 py-2 border border-neutral-40 ${status == 'locked' ? 'bg-neutral-20' : activeCurriculum.id == curriculumData.id ? 'bg-primary-surface' : 'bg-white'}`}>
+        <button className={`hover:bg-primary-surface flex flex-row items-center gap-3 px-3 py-2 border border-neutral-40 ${status == 'locked' ? 'bg-neutral-20' : 'bg-white'}`}>
             {status == 'finished' ?
                 <div className="text-[#0C8048]"><HiCheck /></div> : status == 'ongoing' ?
                     <div className="text-white rounded-lg bg-danger-main p-0.5"><HiXMark /></div> : status == 'locked' ?
