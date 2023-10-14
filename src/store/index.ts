@@ -2,20 +2,21 @@ import { configureStore } from '@reduxjs/toolkit'
 import sidebarReducer from './sidebarSlice'
 import classReducer from './classSlice'
 import collapseReducer from './collapseSlice'
-import { classApi } from '../api/classApi'
+import initSliceReducer from './initSlice'
+import authSlice from './authSlice'
+import registrantSlice from './registrantSlice'
 
 const store = configureStore({
     reducer: {
-        [classApi.reducerPath]: classApi.reducer,
         sidebarState: sidebarReducer,
         classState: classReducer,
-        collapseState: collapseReducer
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({}).concat([
-            classApi.middleware
-        ])
+        collapseState: collapseReducer,
+        initState: initSliceReducer,
+        authState: authSlice,
+        registrantState: registrantSlice
+    }
 })
 
+export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>
 export default store

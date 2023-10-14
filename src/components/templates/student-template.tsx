@@ -19,7 +19,7 @@ const Default = function ({ children, title }: StudentTemplateDefaultProps) {
             {/* main content */}
             <div className="w-full overflow-y-scroll">
                 {/* topbar */}
-                <Topbar.Default title={title} className="sticky top-0 w-full z-10" />
+                <Topbar.Default title={title} className="sticky top-0 w-full z-[100]" />
 
                 {/* main content */}
                 <div>
@@ -39,7 +39,7 @@ const ClassChapter = function ({ children }: StudentTemplateClassChapterProps) {
             {/* main content */}
             <div className="w-full overflow-y-scroll">
                 {/* topbar */}
-                <Topbar.ClassChapter className="sticky top-0 w-full z-10" />
+                <Topbar.ClassChapter className="sticky top-0 w-full z-[100]" />
 
                 {/* main content */}
                 <div>

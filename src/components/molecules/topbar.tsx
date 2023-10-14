@@ -1,8 +1,11 @@
 import Dropdown from "../atoms/dropdown"
 import TabMenu from "../atoms/tab-menu"
 import { toggleSidebar } from "../../store/sidebarSlice"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { HiOutlineBell } from "react-icons/hi2"
+import { useParams } from "react-router-dom"
+import { RootState } from "@/src/store"
+import { classById } from "@/src/store/classSlice"
 
 interface TopbarDefaultProps {
     title?: string;
@@ -28,7 +31,7 @@ const ClassChapter = function ({ className }: TopbarClassChapterProps) {
     const dispatch = useDispatch()
 
     return (
-        <div className={`h-[70px] px-4 bg-white flex flex-row gap-4 items-center ${className}`}>
+        <div className={`h-[70px] px-4 bg-white flex flex-row gap-4 items-center text-[0.8rem] ${className}`}>
             <button onClick={() => dispatch(toggleSidebar())}><i className="bi bi-list text-xl font-bold"></i></button>
             <Dropdown>
                 <option value="0">Kelas Digital Marketing</option>

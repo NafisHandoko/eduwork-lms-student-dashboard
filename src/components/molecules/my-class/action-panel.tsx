@@ -8,7 +8,7 @@ export default function MyClassActionPanel() {
     return (
         <div className='flex flex-row gap-3 justify-between items-stretch'>
             <a
-                className='hidden md:block rounded-full px-5 py-2 text-white whitespace-nowrap bg-primary-main text-white'
+                className='hidden rounded-full px-4 md:flex items-center justify-center text-white whitespace-nowrap bg-primary-main text-white text-[0.8rem]'
                 href="https://eduwork.id/kelas"
             >
                 Tambah Kelas
@@ -25,7 +25,7 @@ export default function MyClassActionPanel() {
                 value={search}
                 onChange={(e: ChangeEvent) => setSearch((e.target as HTMLInputElement).value)}
             />
-            <div className='flex flex-row items-center gap-2 bg-white border border-primary-main px-4 text-primary-main rounded-full whitespace-nowrap'>
+            <div className='flex flex-row items-center gap-2 bg-white border border-primary-main px-4 text-primary-main rounded-full whitespace-nowrap text-[0.8rem]'>
                 <input type="checkbox" name="last-update" id="last-update" />
                 <span>Last Update</span>
             </div>

@@ -16,26 +16,19 @@ import Mentor from './components/organisms/material/mentor'
 import Splash from './components/organisms/splash'
 import Reviews from './components/organisms/material/reviews'
 import Error404 from './pages/error-404'
-import AuthTest from './pages/auth-test'
-import { useGetAllClassesQuery } from './api/classApi'
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
-import { setClassState } from './store/classSlice'
+import { getLoading } from './store/initSlice'
+import { useSelector } from 'react-redux'
 
 function App() {
   // const { isLoading, isError, error, data: fetchedClassData } = useGetAllClassesQuery()
-  const { data: fetchedClassData } = useGetAllClassesQuery()
-  const dispatch = useDispatch();
+  const initLoading = useSelector(getLoading)
 
-  useEffect(() => {
-    if (fetchedClassData) {
-      dispatch(setClassState(fetchedClassData.data.class));
-    }
-  }, [fetchedClassData, dispatch]);
+  if (initLoading.length > 0) {
+    return <Splash />
+  }
 
   return (
     <>
-      <Splash />
       <Routes>
         <Route path="/" element={<Navigate to="my-class" />} />
         <Route path="my-class" element={<MyClass />} />
@@ -51,9 +44,7 @@ function App() {
           </Route>
           <Route path="all-task" element={<ClassAllTask />} />
         </Route>
-        <Route path="splash" element={<Splash />} />
         <Route path="error404" element={<Error404 />} />
-        <Route path="auth-test" element={<AuthTest />} />
         <Route
           path="*"
           element={<Navigate to="error404" />}
