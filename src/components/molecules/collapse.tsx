@@ -15,7 +15,7 @@ interface CollapseProps {
 
 function CollapseChild({ status, curriculumData }: CollapseChildProps) {
     return (
-        <div className={`flex flex-row items-center gap-3 px-3 py-2 border border-neutral-40 ${status == 'locked' ? 'bg-neutral-20' : 'bg-white'}`}>
+        <button className={`hover:bg-primary-surface flex flex-row items-center gap-3 px-3 py-2 border border-neutral-40 ${status == 'locked' ? 'bg-neutral-20' : 'bg-white'}`}>
             {status == 'finished' ?
                 <div className="text-[#0C8048]"><HiCheck /></div> : status == 'ongoing' ?
                     <div className="text-white rounded-lg bg-danger-main p-0.5"><HiXMark /></div> : status == 'locked' ?
@@ -23,7 +23,7 @@ function CollapseChild({ status, curriculumData }: CollapseChildProps) {
             }
             {/* <h4 className={status == 'locked' ? 'text-[#A9A9A9]' : 'text-text-heading'}>News Portal Introduction - What you will build asdasda</h4> */}
             <h4 className={status == 'locked' ? 'text-[#A9A9A9]' : 'text-text-heading'}>{curriculumData.title}</h4>
-        </div>
+        </button>
     )
 }
 
